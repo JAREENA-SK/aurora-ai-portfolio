@@ -6,7 +6,7 @@ export default function Navbar() {
           href="#top"
           className="text-2xl font-bold tracking-wide text-cyan-400"
         >
-          Aurora<span className="text-white">.</span>AI
+          SJ<span className="text-white">.</span>Portfolio
         </a>
 
         <ul className="hidden items-center gap-8 text-gray-300 md:flex">
