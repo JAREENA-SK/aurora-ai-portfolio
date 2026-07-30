@@ -1,6 +1,5 @@
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
-import ScrollProgress from "../components/ui/ScrollProgress";
 
 import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
@@ -16,7 +15,6 @@ export default function Home() {
       id="top"
       className="min-h-screen bg-[#0B1020] text-white"
     >
-      <ScrollProgress />
 
       <Navbar />
       <Hero />
