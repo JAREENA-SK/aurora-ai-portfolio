@@ -16,6 +16,7 @@ function Counter({ end, suffix = "" }: CounterProps) {
 
   useEffect(() => {
     let current = 0;
+
     const duration = 1200;
     const intervalTime = 30;
     const totalSteps = duration / intervalTime;
@@ -70,16 +71,16 @@ const statistics = [
 export default function Hero() {
   return (
     <section className="relative min-h-[85vh] overflow-hidden px-5 py-10 sm:px-6 lg:py-0">
-      {/* Background Glow */}
+      {/* Background glow */}
 
       <div className="absolute left-1/4 top-1/4 -z-10 h-72 w-72 rounded-full bg-cyan-400/15 blur-3xl sm:h-96 sm:w-96" />
 
       <div className="absolute right-1/4 top-20 -z-10 h-64 w-64 rounded-full bg-purple-500/15 blur-3xl sm:h-80 sm:w-80" />
 
-      {/* Main Hero Layout */}
+      {/* Main layout */}
 
       <div className="mx-auto grid min-h-[85vh] max-w-7xl items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-        {/* Left Content */}
+        {/* Left content */}
 
         <motion.div
           initial={{ opacity: 0, y: 35 }}
@@ -87,7 +88,7 @@ export default function Hero() {
           transition={{ duration: 0.9 }}
           className="text-center lg:text-left"
         >
-          {/* Availability Badge */}
+          {/* Availability badge */}
 
           <motion.div
             initial={{ opacity: 0, y: -15 }}
@@ -128,7 +129,7 @@ export default function Hero() {
             SHAIK JAREENA
           </motion.h1>
 
-          {/* Typing Roles */}
+          {/* Typing roles */}
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -169,7 +170,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9 }}
-            className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start"
+            className="flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap lg:justify-start"
           >
             <motion.a
               href="/resume/Shaik-Jareena-Resume.pdf"
@@ -179,6 +180,17 @@ export default function Hero() {
               className="rounded-xl bg-[#6C63FF] px-8 py-3 text-center font-semibold transition-colors duration-300 hover:bg-[#5A52E0]"
             >
               Download Resume
+            </motion.a>
+
+            <motion.a
+              href="/resume/Shaik-Jareena-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.06 }}
+              whileTap={{ scale: 0.96 }}
+              className="rounded-xl border border-purple-400 px-8 py-3 text-center font-semibold text-purple-300 transition-colors duration-300 hover:bg-purple-400 hover:text-black"
+            >
+              Preview Resume
             </motion.a>
 
             <motion.a
@@ -226,7 +238,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right Side: Globe and Avatar */}
+        {/* Right side: globe and avatar */}
 
         <div className="relative mx-auto h-[430px] w-full max-w-[470px] sm:h-[520px]">
           {/* Globe */}
@@ -240,7 +252,7 @@ export default function Hero() {
             <Globe />
           </motion.div>
 
-          {/* Continuously Floating Avatar */}
+          {/* Floating avatar */}
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
