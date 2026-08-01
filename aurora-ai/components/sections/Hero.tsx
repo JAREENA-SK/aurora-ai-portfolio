@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import Globe from "../three/Globe";
 
 type CounterProps = {
   end: number;
@@ -16,7 +15,6 @@ function Counter({ end, suffix = "" }: CounterProps) {
 
   useEffect(() => {
     let current = 0;
-
     const duration = 1200;
     const intervalTime = 30;
     const totalSteps = duration / intervalTime;
@@ -70,8 +68,8 @@ const statistics = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[85vh] overflow-hidden px-5 py-10 sm:px-6 lg:py-0">
-      {/* Background glow */}
+    <section className="relative min-h-[85vh] overflow-hidden px-5 py-12 sm:px-6 lg:py-16">
+      {/* Background glows */}
 
       <div className="absolute left-1/4 top-1/4 -z-10 h-72 w-72 rounded-full bg-cyan-400/15 blur-3xl sm:h-96 sm:w-96" />
 
@@ -79,7 +77,7 @@ export default function Hero() {
 
       {/* Main layout */}
 
-      <div className="mx-auto grid min-h-[85vh] max-w-7xl items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+      <div className="mx-auto grid min-h-[78vh] max-w-7xl items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
         {/* Left content */}
 
         <motion.div
@@ -99,7 +97,6 @@ export default function Hero() {
             <div className="inline-flex items-center gap-3 rounded-full border border-green-400/25 bg-green-400/10 px-5 py-2 text-sm font-medium text-green-300">
               <span className="relative flex h-3 w-3">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-
                 <span className="relative inline-flex h-3 w-3 rounded-full bg-green-400" />
               </span>
 
@@ -238,57 +235,73 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right side: globe and avatar */}
+        {/* Right side: avatar only */}
 
-        <div className="relative mx-auto h-[430px] w-full max-w-[470px] sm:h-[520px]">
-          {/* Globe */}
+        <motion.div
+          initial={{ opacity: 0, x: 45, scale: 0.92 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.35 }}
+          className="relative mx-auto flex w-full max-w-[470px] items-center justify-center"
+        >
+          {/* Glow behind avatar */}
+
+          <div className="absolute h-72 w-72 rounded-full bg-cyan-400/15 blur-3xl sm:h-96 sm:w-96" />
+
+          <div className="absolute h-64 w-64 translate-x-10 translate-y-8 rounded-full bg-purple-500/15 blur-3xl sm:h-80 sm:w-80" />
+
+          {/* Avatar card */}
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.7 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-            className="absolute inset-0"
-          >
-            <Globe />
-          </motion.div>
-
-          {/* Floating avatar */}
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
             animate={{
-              opacity: 1,
-              scale: 1,
               y: [0, -14, 0],
             }}
             transition={{
-              opacity: {
-                delay: 0.6,
-                duration: 0.8,
-              },
-              scale: {
-                delay: 0.6,
-                duration: 0.8,
-              },
-              y: {
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              },
+              duration: 3.2,
+              repeat: Infinity,
+              ease: "easeInOut",
             }}
-            whileHover={{ scale: 1.06 }}
-            className="absolute bottom-3 right-1/2 z-10 h-40 w-40 translate-x-1/2 overflow-hidden rounded-full border-4 border-[#0B1020] bg-[#161B2F] shadow-[0_0_40px_rgba(0,212,255,0.4)] sm:bottom-8 sm:right-4 sm:h-52 sm:w-52 sm:translate-x-0"
+            whileHover={{
+              scale: 1.03,
+              rotate: 1,
+            }}
+            className="relative z-10 w-full overflow-hidden rounded-[2rem] border border-cyan-500/20 bg-[#161B2F]/90 p-4 shadow-[0_0_45px_rgba(0,212,255,0.24)] backdrop-blur-md sm:p-5"
           >
-            <Image
-              src="/profile/shaik-jareena-avatar.png"
-              alt="Illustrated portrait of Shaik Jareena"
-              fill
-              priority
-              sizes="(max-width: 640px) 160px, 208px"
-              className="object-cover"
-            />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[#0F172A]">
+              <Image
+                src="/profile/shaik-jareena-avatar.png"
+                alt="Illustrated portrait of Shaik Jareena"
+                fill
+                priority
+                sizes="(max-width: 1024px) 90vw, 430px"
+                className="object-cover object-top"
+              />
+
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0B1020] via-[#0B1020]/70 to-transparent px-6 pb-6 pt-16">
+                <p className="text-2xl font-bold text-white">
+                  Shaik Jareena
+                </p>
+
+                <p className="mt-2 text-sm font-medium text-cyan-300 sm:text-base">
+                  Senior Software Engineer • Project Manager
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-4 flex items-center justify-between gap-4 rounded-2xl border border-white/5 bg-[#0F172A] px-5 py-4">
+              <div>
+                <p className="text-sm text-gray-400">Current preference</p>
+                <p className="mt-1 font-semibold text-white">
+                  Remote Opportunities
+                </p>
+              </div>
+
+              <span className="relative flex h-4 w-4 shrink-0">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-70" />
+                <span className="relative inline-flex h-4 w-4 rounded-full bg-green-400" />
+              </span>
+            </div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
