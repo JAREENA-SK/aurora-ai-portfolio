@@ -9,11 +9,11 @@ const experiences = [
     duration: "3 Months",
     tech: ["Python", "Jenkins", "Bitbucket", "Jira", "Linux"],
     points: [
-      "Developed Python automation scripts",
-      "Worked with Jenkins CI/CD pipelines",
-      "Managed code using Bitbucket",
-      "Tracked issues in Jira",
-      "Worked in Linux environments",
+      "Developed and maintained Python automation scripts.",
+      "Supported automated workflows using Jenkins.",
+      "Managed source code and collaboration through Bitbucket.",
+      "Tracked defects, tasks, and project activities using Jira.",
+      "Worked in Linux-based development and testing environments.",
     ],
   },
   {
@@ -22,35 +22,47 @@ const experiences = [
     duration: "1.5 Years",
     tech: ["C", "Python", "Git", "Jira", "Linux"],
     points: [
-      "Developed software utilities using C and Python",
-      "Debugged software issues",
-      "Worked with Git version control",
-      "Collaborated across engineering teams",
-      "Supported Agile development using Jira",
+      "Developed and enhanced software utilities using C and Python.",
+      "Investigated and debugged software and validation issues.",
+      "Managed source code and collaborative development using Git.",
+      "Worked with cross-functional engineering teams.",
+      "Tracked development tasks and technical issues using Jira.",
     ],
   },
   {
     company: "Sevitech Systems",
     role: "Senior Software Engineer",
     duration: "4 Months",
-    tech: ["Leadership", "Project Management", "Team Coordination"],
+    tech: [
+      "Team Leadership",
+      "Project Coordination",
+      "Task Management",
+      "Delivery",
+    ],
     points: [
-      "Led a software development team",
-      "Managed project planning",
-      "Coordinated client communication",
-      "Delivered projects on schedule",
+      "Led a software team during project planning and execution.",
+      "Assigned responsibilities and coordinated work among team members.",
+      "Monitored project progress, risks, and delivery timelines.",
+      "Supported communication between stakeholders and the project team.",
+      "Helped ensure timely and quality project delivery.",
     ],
   },
   {
     company: "Technical Trainer & Project Mentor",
     role: "Engineering Colleges",
     duration: "1 Year",
-    tech: ["Python", "Career Guidance", "Projects"],
+    tech: [
+      "Project Mentoring",
+      "Technical Training",
+      "Presentations",
+      "Interview Preparation",
+    ],
     points: [
-      "Mentored engineering students",
-      "Conducted mock interviews",
-      "Guided final-year projects",
-      "Prepared students for placements",
+      "Guided graduation students through academic and technical projects.",
+      "Helped students plan, document, and present their project work.",
+      "Conducted technical training and career-readiness sessions.",
+      "Supported students with mock interviews and communication practice.",
+      "Mentored students in developing confidence and workplace skills.",
     ],
   },
 ];
@@ -59,101 +71,102 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="bg-[#0B1020] px-6 py-24 text-white"
+      className="bg-[#0B1020] px-5 py-24 text-white sm:px-6"
     >
       <div className="mx-auto max-w-6xl">
+        {/* Heading */}
 
-        <div className="mb-20 text-center">
-
-          <p className="uppercase tracking-[6px] text-cyan-400 font-semibold">
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-20 text-center"
+        >
+          <p className="font-semibold uppercase tracking-[6px] text-cyan-400">
             Experience
           </p>
 
-          <h2 className="mt-4 text-5xl font-bold">
+          <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
             Professional Journey
           </h2>
 
-        </div>
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-400">
+            A career journey combining software engineering, automation,
+            technical problem-solving, project leadership, and student
+            mentoring.
+          </p>
+        </motion.div>
 
-        <div className="relative border-l-2 border-cyan-500/40">
+        {/* Timeline */}
 
+        <div className="relative border-l-2 border-cyan-500/30 pl-8 sm:pl-12">
           {experiences.map((job, index) => (
-
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: 60 }}
+            <motion.article
+              key={`${job.company}-${job.role}`}
+              initial={{ opacity: 0, x: 45 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{
                 duration: 0.6,
-                delay: index * 0.2,
+                delay: index * 0.12,
               }}
-              className="relative mb-16 ml-10"
+              className="relative mb-14 last:mb-0"
             >
+              {/* Timeline Dot */}
 
-              <div className="absolute -left-[51px] top-6 h-5 w-5 rounded-full bg-cyan-400 shadow-[0_0_20px_#00D4FF]" />
+              <div className="absolute -left-[42px] top-7 h-5 w-5 rounded-full border-4 border-[#0B1020] bg-cyan-400 shadow-[0_0_20px_rgba(0,212,255,0.85)] sm:-left-[58px]" />
 
-              <div className="rounded-3xl border border-cyan-500/20 bg-[#161B2F] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(0,212,255,0.25)]">
+              {/* Experience Card */}
 
-                <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-
+              <div className="rounded-3xl border border-cyan-500/20 bg-[#161B2F] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/70 hover:shadow-[0_0_35px_rgba(0,212,255,0.16)] sm:p-8">
+                <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                   <div>
-
-                    <h3 className="text-3xl font-bold">
+                    <h3 className="text-2xl font-bold sm:text-3xl">
                       {job.company}
                     </h3>
 
-                    <p className="text-cyan-400 text-lg">
+                    <p className="mt-2 text-lg font-medium text-cyan-400">
                       {job.role}
                     </p>
-
                   </div>
 
-                  <div className="rounded-full bg-[#0F172A] px-5 py-2 text-sm text-gray-300">
+                  <span className="w-fit rounded-full border border-white/10 bg-[#0F172A] px-5 py-2 text-sm font-medium text-gray-300">
                     {job.duration}
-                  </div>
-
+                  </span>
                 </div>
+
+                {/* Technologies */}
 
                 <div className="mt-6 flex flex-wrap gap-3">
-
-                  {job.tech.map((item) => (
-
+                  {job.tech.map((technology) => (
                     <span
-                      key={item}
+                      key={technology}
                       className="rounded-full border border-cyan-500/20 bg-[#0F172A] px-4 py-2 text-sm text-cyan-300"
                     >
-                      {item}
+                      {technology}
                     </span>
-
                   ))}
-
                 </div>
 
-                <ul className="mt-8 space-y-3">
+                {/* Responsibilities */}
 
+                <ul className="mt-8 space-y-4">
                   {job.points.map((point) => (
-
                     <li
                       key={point}
-                      className="flex items-start gap-3 text-gray-300"
+                      className="flex items-start gap-3 leading-7 text-gray-300"
                     >
-                      <span className="mt-1 text-cyan-400">✓</span>
-                      {point}
+                      <span className="mt-1 font-bold text-cyan-400">✓</span>
+
+                      <span>{point}</span>
                     </li>
-
                   ))}
-
                 </ul>
-
               </div>
-
-            </motion.div>
-
+            </motion.article>
           ))}
-
         </div>
-
       </div>
     </section>
   );
