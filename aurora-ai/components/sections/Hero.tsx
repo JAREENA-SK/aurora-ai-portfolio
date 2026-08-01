@@ -1,8 +1,70 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import Globe from "../three/Globe";
+
+type CounterProps = {
+  end: number;
+  suffix?: string;
+};
+
+function Counter({ end, suffix = "" }: CounterProps) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let current = 0;
+    const duration = 1200;
+    const intervalTime = 30;
+    const totalSteps = duration / intervalTime;
+    const increment = end / totalSteps;
+
+    const timer = window.setInterval(() => {
+      current += increment;
+
+      if (current >= end) {
+        setCount(end);
+        window.clearInterval(timer);
+        return;
+      }
+
+      setCount(Math.floor(current));
+    }, intervalTime);
+
+    return () => window.clearInterval(timer);
+  }, [end]);
+
+  return (
+    <span>
+      {count}
+      {suffix}
+    </span>
+  );
+}
+
+const statistics = [
+  {
+    value: 3,
+    suffix: "+",
+    label: "Years Experience",
+  },
+  {
+    value: 4,
+    suffix: "",
+    label: "Professional Roles",
+  },
+  {
+    value: 2,
+    suffix: "",
+    label: "Certifications",
+  },
+  {
+    value: 100,
+    suffix: "%",
+    label: "Dedication",
+  },
+];
 
 export default function Hero() {
   return (
@@ -24,6 +86,25 @@ export default function Hero() {
           transition={{ duration: 0.9 }}
           className="order-1 max-w-2xl text-center lg:text-left"
         >
+          {/* Availability Badge */}
+
+          <motion.div
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15 }}
+            className="mb-6 flex justify-center lg:justify-start"
+          >
+            <div className="inline-flex items-center gap-3 rounded-full border border-green-400/25 bg-green-400/10 px-5 py-2 text-sm font-medium text-green-300">
+              <span className="relative flex h-3 w-3">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+
+                <span className="relative inline-flex h-3 w-3 rounded-full bg-green-400" />
+              </span>
+
+              Available for Remote Opportunities
+            </div>
+          </motion.div>
+
           {/* Greeting */}
 
           <motion.p
@@ -77,7 +158,7 @@ export default function Hero() {
             className="mx-auto mb-9 max-w-xl text-base leading-7 text-gray-400 sm:text-lg sm:leading-8 lg:mx-0"
           >
             Experienced in software engineering, project coordination, team
-            leadership, automation, and technical mentoring. Currently open to
+            leadership, automation and technical mentoring. Currently exploring
             remote opportunities in project management and operations.
           </motion.p>
 
@@ -107,6 +188,40 @@ export default function Hero() {
             >
               Contact Me
             </motion.a>
+          </motion.div>
+
+          {/* Animated Statistics */}
+
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.1 }}
+            className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4"
+          >
+            {statistics.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  delay: 1.15 + index * 0.1,
+                  duration: 0.4,
+                }}
+                whileHover={{
+                  y: -5,
+                  scale: 1.03,
+                }}
+                className="rounded-2xl border border-cyan-500/15 bg-[#161B2F]/80 px-4 py-5 text-center backdrop-blur-sm transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_0_25px_rgba(0,212,255,0.12)]"
+              >
+                <p className="text-2xl font-extrabold text-cyan-400 sm:text-3xl">
+                  <Counter end={stat.value} suffix={stat.suffix} />
+                </p>
+
+                <p className="mt-2 text-xs leading-5 text-gray-400 sm:text-sm">
+                  {stat.label}
+                </p>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
 
