@@ -1,5 +1,6 @@
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import LoadingScreen from "../components/ui/LoadingScreen";
 
 import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
@@ -15,6 +16,7 @@ export default function Home() {
       id="top"
       className="min-h-screen bg-[#0B1020] text-white"
     >
+      <LoadingScreen />
 
       <Navbar />
       <Hero />
