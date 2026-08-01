@@ -2,36 +2,72 @@
 
 import { motion } from "framer-motion";
 
-const skills = [
+const skillGroups = [
   {
+    title: "Software Development",
     icon: "💻",
-    title: "Technical Support",
-    description: "Troubleshooting, issue resolution, customer support",
+    skills: ["C", "Python", "React", "Next.js", "TypeScript"],
+    description:
+      "Experience with software development, automation, reusable components, and modern web technologies.",
   },
   {
-    icon: "📁",
-    title: "Project Management",
-    description: "Planning, coordination and delivery",
+    title: "Project & Operations",
+    icon: "📋",
+    skills: [
+      "Project Planning",
+      "Team Coordination",
+      "Task Management",
+      "Stakeholder Communication",
+      "Delivery Tracking",
+    ],
+    description:
+      "Supporting project execution, coordinating teams, monitoring progress, and helping deliver work on schedule.",
   },
   {
+    title: "Development Tools",
+    icon: "🛠️",
+    skills: ["Git", "Bitbucket", "Jenkins", "Jira", "Linux"],
+    description:
+      "Hands-on experience with source control, automation pipelines, issue tracking, and Linux environments.",
+  },
+  {
+    title: "Leadership & Mentoring",
+    icon: "🎯",
+    skills: [
+      "Team Leadership",
+      "Project Mentoring",
+      "Technical Training",
+      "Interview Preparation",
+      "Presentation Skills",
+    ],
+    description:
+      "Experience leading a project team and mentoring students through technical projects and career preparation.",
+  },
+  {
+    title: "Frontend Technologies",
     icon: "⚛️",
-    title: "React",
-    description: "Modern component-based UI development",
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    description:
+      "Building responsive, animated, and user-friendly interfaces using modern frontend technologies.",
   },
   {
-    icon: "▲",
-    title: "Next.js",
-    description: "Full-stack React framework",
-  },
-  {
-    icon: "🎨",
-    title: "Tailwind CSS",
-    description: "Utility-first responsive styling",
-  },
-  {
-    icon: "🐍",
-    title: "Python",
-    description: "Learning automation and programming",
+    title: "Professional Strengths",
+    icon: "🌟",
+    skills: [
+      "Problem Solving",
+      "Communication",
+      "Adaptability",
+      "Continuous Learning",
+      "Collaboration",
+    ],
+    description:
+      "Professional strengths that support effective teamwork, learning, decision-making, and reliable delivery.",
   },
 ];
 
@@ -39,63 +75,77 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="bg-[#0B1020] px-6 py-24 text-white"
+      className="bg-[#0B1020] px-5 py-24 text-white sm:px-6"
     >
       <div className="mx-auto max-w-7xl">
+        {/* Heading */}
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <p className="font-semibold uppercase tracking-widest text-cyan-400">
+          <p className="font-semibold uppercase tracking-[6px] text-cyan-400">
             My Skills
           </p>
 
-          <h2 className="mt-4 text-5xl font-bold">
+          <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
             Technologies & Expertise
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-400">
-            Technologies and professional skills I use to build reliable
-            solutions and continuously improve my knowledge.
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-400">
+            A combination of software engineering, project coordination,
+            technical tools, leadership, and continuous learning.
           </p>
         </motion.div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Skill Cards */}
 
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.title}
-              initial={{ opacity: 0, y: 60 }}
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {skillGroups.map((group, index) => (
+            <motion.article
+              key={group.title}
+              initial={{ opacity: 0, y: 45 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{
-                duration: 0.6,
-                delay: index * 0.15,
+                duration: 0.55,
+                delay: index * 0.1,
               }}
               whileHover={{
-                y: -10,
-                scale: 1.03,
+                y: -8,
+                scale: 1.02,
               }}
-              className="rounded-3xl border border-cyan-500/20 bg-[#161B2F] p-8 transition duration-300 hover:border-cyan-400 hover:shadow-[0_0_35px_rgba(0,212,255,0.25)]"
+              className="rounded-3xl border border-cyan-500/20 bg-[#161B2F] p-7 transition-all duration-300 hover:border-cyan-400/70 hover:shadow-[0_0_35px_rgba(0,212,255,0.18)] sm:p-8"
             >
-              <div className="mb-6 text-5xl">
-                {skill.icon}
+              <div className="mb-6 flex items-center justify-between">
+                <span className="text-5xl">{group.icon}</span>
+
+                <span className="rounded-full border border-white/10 bg-[#0F172A] px-3 py-1 text-xs uppercase tracking-wider text-gray-400">
+                  Expertise
+                </span>
               </div>
 
-              <h3 className="mb-4 text-2xl font-bold">
-                {skill.title}
-              </h3>
+              <h3 className="text-2xl font-bold">{group.title}</h3>
 
-              <p className="leading-8 text-gray-400">
-                {skill.description}
+              <p className="mt-4 leading-7 text-gray-400">
+                {group.description}
               </p>
-            </motion.div>
-          ))}
 
+              <div className="mt-6 flex flex-wrap gap-3">
+                {group.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-full border border-cyan-500/20 bg-[#0F172A] px-4 py-2 text-sm text-cyan-300"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>
