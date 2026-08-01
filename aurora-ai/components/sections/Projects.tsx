@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { Code2, ExternalLink } from "lucide-react";
 
 const projects = [
   {
@@ -153,12 +153,12 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded-xl bg-[#6C63FF] px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 hover:bg-[#5A52E0]"
                     >
-                      <Github size={19} />
-                      GitHub
+                      <Code2 size={19} />
+                      GitHubs
                     </a>
                   ) : (
                     <span className="inline-flex cursor-not-allowed items-center gap-2 rounded-xl bg-white/5 px-6 py-3 font-semibold text-gray-500">
-                      <Github size={19} />
+                      <Code2 size={19} />
                       Coming Soon
                     </span>
                   )}
