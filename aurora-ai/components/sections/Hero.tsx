@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
@@ -69,22 +70,22 @@ const statistics = [
 export default function Hero() {
   return (
     <section className="relative min-h-[85vh] overflow-hidden px-5 py-10 sm:px-6 lg:py-0">
-      {/* Subtle Hero Glow */}
+      {/* Background Glow */}
 
       <div className="absolute left-1/4 top-1/4 -z-10 h-72 w-72 rounded-full bg-cyan-400/15 blur-3xl sm:h-96 sm:w-96" />
 
       <div className="absolute right-1/4 top-20 -z-10 h-64 w-64 rounded-full bg-purple-500/15 blur-3xl sm:h-80 sm:w-80" />
 
-      {/* Main Hero Container */}
+      {/* Main Hero Layout */}
 
-      <div className="mx-auto flex min-h-[85vh] max-w-7xl flex-col items-center justify-center gap-8 lg:flex-row lg:justify-between lg:gap-12">
+      <div className="mx-auto grid min-h-[85vh] max-w-7xl items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
         {/* Left Content */}
 
         <motion.div
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9 }}
-          className="order-1 max-w-2xl text-center lg:text-left"
+          className="text-center lg:text-left"
         >
           {/* Availability Badge */}
 
@@ -190,7 +191,7 @@ export default function Hero() {
             </motion.a>
           </motion.div>
 
-          {/* Animated Statistics */}
+          {/* Statistics */}
 
           <motion.div
             initial={{ opacity: 0, y: 25 }}
@@ -225,16 +226,57 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right Globe */}
+        {/* Right Side: Globe and Avatar */}
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.7 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          className="order-2 h-[300px] w-[300px] shrink-0 sm:h-[360px] sm:w-[360px] md:h-[420px] md:w-[420px] lg:h-[470px] lg:w-[470px]"
-        >
-          <Globe />
-        </motion.div>
+        <div className="relative mx-auto h-[430px] w-full max-w-[470px] sm:h-[520px]">
+          {/* Globe */}
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0"
+          >
+            <Globe />
+          </motion.div>
+
+          {/* Continuously Floating Avatar */}
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: [0, -14, 0],
+            }}
+            transition={{
+              opacity: {
+                delay: 0.6,
+                duration: 0.8,
+              },
+              scale: {
+                delay: 0.6,
+                duration: 0.8,
+              },
+              y: {
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+            }}
+            whileHover={{ scale: 1.06 }}
+            className="absolute bottom-3 right-1/2 z-10 h-40 w-40 translate-x-1/2 overflow-hidden rounded-full border-4 border-[#0B1020] bg-[#161B2F] shadow-[0_0_40px_rgba(0,212,255,0.4)] sm:bottom-8 sm:right-4 sm:h-52 sm:w-52 sm:translate-x-0"
+          >
+            <Image
+              src="/profile/shaik-jareena-avatar.png"
+              alt="Illustrated portrait of Shaik Jareena"
+              fill
+              priority
+              sizes="(max-width: 640px) 160px, 208px"
+              className="object-cover"
+            />
+          </motion.div>
+        </div>
       </div>
     </section>
   );
