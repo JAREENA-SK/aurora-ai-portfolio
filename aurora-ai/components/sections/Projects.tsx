@@ -8,7 +8,7 @@ const projects = [
   {
     title: "Aurora AI Portfolio",
     description:
-      "A premium personal portfolio featuring responsive layouts, smooth animations, an interactive 3D Earth and a working contact form.",
+      "A premium personal portfolio featuring responsive layouts, smooth animations, a polished illustrated avatar experience and a working contact form.",
     tech: [
       "Next.js",
       "React",
@@ -52,7 +52,6 @@ export default function Projects() {
     >
       <div className="mx-auto max-w-7xl">
         {/* Heading */}
-
         <motion.div
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,11 +62,9 @@ export default function Projects() {
           <p className="font-semibold uppercase tracking-[6px] text-cyan-400">
             Projects
           </p>
-
           <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
             Featured Projects
           </h2>
-
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-400">
             A collection of projects and initiatives demonstrating technical
             learning, problem-solving, project coordination and modern web
@@ -76,7 +73,6 @@ export default function Projects() {
         </motion.div>
 
         {/* Project Cards */}
-
         <div className="grid gap-10 lg:grid-cols-2">
           {projects.map((project, index) => (
             <motion.article
@@ -84,17 +80,11 @@ export default function Projects() {
               initial={{ opacity: 0, y: 55 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.15,
-              }}
-              whileHover={{
-                y: -8,
-              }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              whileHover={{ y: -8 }}
               className="group overflow-hidden rounded-3xl border border-cyan-500/20 bg-[#161B2F] transition-all duration-300 hover:border-cyan-400/70 hover:shadow-[0_0_40px_rgba(0,212,255,0.18)]"
             >
               {/* Screenshot or Placeholder */}
-
               <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#6C63FF] via-blue-600 to-cyan-500">
                 {project.image ? (
                   <Image
@@ -108,7 +98,6 @@ export default function Projects() {
                   <div className="flex h-full items-center justify-center">
                     <div className="text-center">
                       <span className="text-6xl">💻</span>
-
                       <p className="mt-4 font-medium text-white/80">
                         Preview coming soon
                       </p>
@@ -124,12 +113,8 @@ export default function Projects() {
               </div>
 
               {/* Project Information */}
-
               <div className="p-8">
-                <h3 className="text-3xl font-bold">
-                  {project.title}
-                </h3>
-
+                <h3 className="text-3xl font-bold">{project.title}</h3>
                 <p className="mt-5 leading-8 text-gray-400">
                   {project.description}
                 </p>
@@ -154,7 +139,7 @@ export default function Projects() {
                       className="inline-flex items-center gap-2 rounded-xl bg-[#6C63FF] px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 hover:bg-[#5A52E0]"
                     >
                       <Code2 size={19} />
-                      GitHubs
+                      GitHub
                     </a>
                   ) : (
                     <span className="inline-flex cursor-not-allowed items-center gap-2 rounded-xl bg-white/5 px-6 py-3 font-semibold text-gray-500">
