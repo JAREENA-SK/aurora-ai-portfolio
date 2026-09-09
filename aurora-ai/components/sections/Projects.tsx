@@ -10,11 +10,12 @@ const projects = [
     description:
       "A premium personal portfolio featuring responsive layouts, smooth animations, a polished illustrated avatar experience and a working contact form.",
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Three.js", "Framer Motion"],
-    image: "/projects/aurora-ai.png",
+    image: "",
     github: "https://github.com/JAREENA-SK/aurora-ai-portfolio",
     demo: "https://aurora-ai-portfolio.vercel.app",
     featured: true,
     automation: false,
+    aurora: true,
   },
   {
     title: "NoorFlowAI — AI Content Automation Platform",
@@ -26,6 +27,7 @@ const projects = [
     demo: "https://noor-flow-ai.vercel.app/",
     featured: true,
     automation: true,
+    aurora: false,
   },
   {
     title: "HireReady Program",
@@ -37,6 +39,7 @@ const projects = [
     demo: "#",
     featured: false,
     automation: false,
+    aurora: false,
   },
   {
     title: "IT Support Ticket System",
@@ -48,6 +51,7 @@ const projects = [
     demo: "#",
     featured: false,
     automation: false,
+    aurora: false,
   },
 ];
 
@@ -81,8 +85,36 @@ export default function Projects() {
               whileHover={{ y: -8 }}
               className="group overflow-hidden rounded-3xl border border-cyan-500/20 bg-[#161B2F] transition-all duration-300 hover:border-cyan-400/70 hover:shadow-[0_0_40px_rgba(0,212,255,0.18)]"
             >
-              <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#6C63FF] via-blue-600 to-cyan-500">
-                {project.image ? (
+              <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#0B1020] via-[#10182A] to-[#161B2F]">
+                {project.aurora ? (
+                  <div className="relative flex h-full items-center justify-between overflow-hidden px-8">
+                    <div className="absolute left-10 top-8 h-28 w-28 rounded-full bg-cyan-400/10 blur-3xl" />
+                    <div className="absolute right-10 bottom-4 h-36 w-36 rounded-full bg-purple-500/10 blur-3xl" />
+
+                    <div className="relative z-10 max-w-[58%]">
+                      <p className="text-sm font-medium text-cyan-400">👋 Hi, I&apos;m</p>
+                      <h4 className="mt-2 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-4xl font-extrabold leading-none text-transparent sm:text-5xl">
+                        SHAIK JAREENA
+                      </h4>
+                      <p className="mt-3 text-lg font-semibold text-white">Senior Software Engineer</p>
+                      <p className="mt-2 text-sm leading-6 text-gray-400">
+                        Project management • automation • technical mentoring
+                      </p>
+                    </div>
+
+                    <div className="relative z-10 flex h-44 w-44 items-center justify-center rounded-[2rem] border border-cyan-400/20 bg-[#0F172A] p-3 shadow-[0_0_30px_rgba(0,212,255,0.18)] sm:h-48 sm:w-48">
+                      <div className="relative h-full w-full overflow-hidden rounded-[1.5rem]">
+                        <Image
+                          src="/profile/shaik-jareena-avatar.png"
+                          alt="Shaik Jareena illustrated avatar"
+                          fill
+                          sizes="200px"
+                          className="object-cover object-top"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ) : project.image ? (
                   <Image
                     src={project.image}
                     alt={`${project.title} preview`}
