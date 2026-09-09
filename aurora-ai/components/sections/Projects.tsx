@@ -16,6 +16,7 @@ const projects = [
     featured: true,
     automation: false,
     aurora: true,
+    hireReady: false,
   },
   {
     title: "NoorFlowAI — AI Content Automation Platform",
@@ -28,18 +29,20 @@ const projects = [
     featured: true,
     automation: true,
     aurora: false,
+    hireReady: false,
   },
   {
-    title: "HireReady Program",
+    title: "HireReady — Final Year Project Hub",
     description:
-      "A career-development initiative designed to support job seekers through resume preparation, interview training, technical mentoring and career guidance.",
-    tech: ["Career Mentoring", "Interview Preparation", "Project Planning"],
+      "A guided project-learning platform for CSE and ECE students that takes teams from project selection through implementation, documentation, reviews and viva preparation. The platform is designed around genuine understanding, remote mentoring and structured project execution rather than simple project submission.",
+    tech: ["Career EdTech", "CSE & ECE", "Remote Mentoring", "Project Guidance", "Documentation", "Viva Preparation"],
     image: "",
     github: "#",
-    demo: "#",
-    featured: false,
+    demo: "https://hireready-projecthub-preview.hireready-projecthub.workers.dev/#projects",
+    featured: true,
     automation: false,
     aurora: false,
+    hireReady: true,
   },
   {
     title: "IT Support Ticket System",
@@ -52,6 +55,7 @@ const projects = [
     featured: false,
     automation: false,
     aurora: false,
+    hireReady: false,
   },
 ];
 
@@ -114,6 +118,39 @@ export default function Projects() {
                       </div>
                     </div>
                   </div>
+                ) : project.hireReady ? (
+                  <div className="relative flex h-full overflow-hidden bg-[#10233c] px-7 py-7">
+                    <div className="absolute right-[-40px] top-[-50px] h-48 w-48 rounded-full bg-teal-300/10 blur-3xl" />
+                    <div className="relative z-10 flex w-full items-center justify-between gap-5">
+                      <div className="max-w-[58%]">
+                        <p className="text-xs font-bold uppercase tracking-[0.18em] text-teal-300">
+                          Final Year Projects • CSE & ECE
+                        </p>
+                        <h4 className="mt-3 text-3xl font-extrabold leading-[1.05] text-white sm:text-4xl">
+                          Don&apos;t just submit it.
+                          <span className="block text-teal-200">Understand it.</span>
+                          <span className="block text-teal-300">Build it. Defend it.</span>
+                        </h4>
+                        <p className="mt-3 text-xs leading-5 text-slate-300">
+                          Guided implementation • documentation • reviews • viva preparation
+                        </p>
+                      </div>
+
+                      <div className="w-[38%] rounded-2xl border border-teal-300/20 bg-[#132b43] p-4 shadow-[0_0_30px_rgba(45,212,191,0.10)]">
+                        <div className="flex items-center justify-between text-[10px] font-semibold text-slate-300">
+                          <span>Interactive ProjectBook</span>
+                          <span className="text-emerald-300">● Guided</span>
+                        </div>
+                        <p className="mt-3 text-lg font-bold text-white">QuantumShield AI</p>
+                        <p className="text-xs text-cyan-200">Module 03 • Architecture</p>
+                        <div className="mt-3 space-y-2 text-[10px]">
+                          <div className="rounded-lg border border-emerald-400/20 bg-emerald-400/5 px-3 py-2 text-emerald-300">✓ Understand</div>
+                          <div className="rounded-lg border border-cyan-400/25 bg-cyan-400/5 px-3 py-2 text-cyan-200">• Architecture</div>
+                          <div className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-slate-300">○ Setup</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 ) : project.image ? (
                   <Image
                     src={project.image}
@@ -156,6 +193,19 @@ export default function Projects() {
                       <span
                         key={feature}
                         className="rounded-xl border border-emerald-400/15 bg-emerald-400/5 px-3 py-2 text-center text-emerald-200"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {project.hireReady && (
+                  <div className="mt-6 grid grid-cols-2 gap-3 text-sm sm:grid-cols-3">
+                    {["Project Selection", "Guided Build", "Documentation", "Remote Reviews", "Viva Preparation", "CSE & ECE"].map((feature) => (
+                      <span
+                        key={feature}
+                        className="rounded-xl border border-teal-400/15 bg-teal-400/5 px-3 py-2 text-center text-teal-200"
                       >
                         {feature}
                       </span>
