@@ -14,16 +14,18 @@ const projects = [
     github: "https://github.com/JAREENA-SK/aurora-ai-portfolio",
     demo: "https://aurora-ai-portfolio.vercel.app",
     featured: true,
+    automation: false,
   },
   {
     title: "NoorFlowAI — AI Content Automation Platform",
     description:
-      "An end-to-end AI-powered content operations and automation platform built to streamline content creation, approvals, metadata, video workflows, publishing and performance tracking. NoorFlowAI combines automated workflows with YouTube integrations, analytics, content scheduling and AI-assisted growth tools in one centralized dashboard.",
+      "An end-to-end AI-powered content operations and automation platform designed to manage content creation, approval workflows, metadata, video production, publishing readiness, scheduling and analytics from one centralized dashboard. It includes automated YouTube workflows, content calendar management, version approvals and AI-assisted growth tooling.",
     tech: ["AI Automation", "Next.js", "TypeScript", "Supabase", "YouTube API", "GitHub Actions", "Analytics"],
-    image: "",
+    image: "/projects/noorflowai-dashboard.png",
     github: "#",
     demo: "https://noor-flow-ai.vercel.app/",
     featured: true,
+    automation: true,
   },
   {
     title: "HireReady Program",
@@ -34,6 +36,7 @@ const projects = [
     github: "#",
     demo: "#",
     featured: false,
+    automation: false,
   },
   {
     title: "IT Support Ticket System",
@@ -44,6 +47,7 @@ const projects = [
     github: "#",
     demo: "#",
     featured: false,
+    automation: false,
   },
 ];
 
@@ -89,24 +93,43 @@ export default function Projects() {
                 ) : (
                   <div className="flex h-full items-center justify-center">
                     <div className="text-center">
-                      <span className="text-6xl">{project.title.startsWith("NoorFlowAI") ? "⚡" : "💻"}</span>
-                      <p className="mt-4 font-medium text-white/80">
-                        {project.title.startsWith("NoorFlowAI") ? "AI Automation Platform" : "Preview coming soon"}
-                      </p>
+                      <span className="text-6xl">💻</span>
+                      <p className="mt-4 font-medium text-white/80">Preview coming soon</p>
                     </div>
                   </div>
                 )}
 
-                {project.featured && (
-                  <span className="absolute left-5 top-5 rounded-full border border-white/20 bg-[#0B1020]/85 px-4 py-2 text-sm font-semibold text-cyan-300 backdrop-blur-md">
-                    ⭐ Featured Project
-                  </span>
-                )}
+                <div className="absolute left-5 top-5 flex flex-wrap gap-2">
+                  {project.featured && (
+                    <span className="rounded-full border border-white/20 bg-[#0B1020]/85 px-4 py-2 text-sm font-semibold text-cyan-300 backdrop-blur-md">
+                      ⭐ Featured Project
+                    </span>
+                  )}
+
+                  {project.automation && (
+                    <span className="rounded-full border border-emerald-400/25 bg-emerald-400/10 px-4 py-2 text-sm font-semibold text-emerald-300 backdrop-blur-md">
+                      ⚡ AI Automation
+                    </span>
+                  )}
+                </div>
               </div>
 
               <div className="p-8">
                 <h3 className="text-3xl font-bold">{project.title}</h3>
                 <p className="mt-5 leading-8 text-gray-400">{project.description}</p>
+
+                {project.automation && (
+                  <div className="mt-6 grid grid-cols-2 gap-3 text-sm sm:grid-cols-3">
+                    {["Approval Workflows", "Content Calendar", "Video Pipeline", "YouTube Automation", "Analytics", "AI Growth Tools"].map((feature) => (
+                      <span
+                        key={feature}
+                        className="rounded-xl border border-emerald-400/15 bg-emerald-400/5 px-3 py-2 text-center text-emerald-200"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                )}
 
                 <div className="mt-7 flex flex-wrap gap-3">
                   {project.tech.map((technology) => (
