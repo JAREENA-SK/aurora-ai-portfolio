@@ -9,17 +9,20 @@ const projects = [
     title: "Aurora AI Portfolio",
     description:
       "A premium personal portfolio featuring responsive layouts, smooth animations, a polished illustrated avatar experience and a working contact form.",
-    tech: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Three.js",
-      "Framer Motion",
-    ],
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Three.js", "Framer Motion"],
     image: "/projects/aurora-ai.png",
     github: "https://github.com/JAREENA-SK/aurora-ai-portfolio",
     demo: "https://aurora-ai-portfolio.vercel.app",
+    featured: true,
+  },
+  {
+    title: "NoorFlowAI — AI Content Automation Platform",
+    description:
+      "An end-to-end AI-powered content operations and automation platform built to streamline content creation, approvals, metadata, video workflows, publishing and performance tracking. NoorFlowAI combines automated workflows with YouTube integrations, analytics, content scheduling and AI-assisted growth tools in one centralized dashboard.",
+    tech: ["AI Automation", "Next.js", "TypeScript", "Supabase", "YouTube API", "GitHub Actions", "Analytics"],
+    image: "",
+    github: "#",
+    demo: "https://noor-flow-ai.vercel.app/",
     featured: true,
   },
   {
@@ -46,12 +49,8 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section
-      id="projects"
-      className="bg-[#0B1020] px-6 py-24 text-white"
-    >
+    <section id="projects" className="bg-[#0B1020] px-6 py-24 text-white">
       <div className="mx-auto max-w-7xl">
-        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -59,20 +58,14 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="mb-20 text-center"
         >
-          <p className="font-semibold uppercase tracking-[6px] text-cyan-400">
-            Projects
-          </p>
-          <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
-            Featured Projects
-          </h2>
+          <p className="font-semibold uppercase tracking-[6px] text-cyan-400">Projects</p>
+          <h2 className="mt-4 text-4xl font-bold sm:text-5xl">Featured Projects</h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-400">
-            A collection of projects and initiatives demonstrating technical
-            learning, problem-solving, project coordination and modern web
-            development.
+            A collection of projects and initiatives demonstrating technical learning,
+            problem-solving, automation, project coordination and modern web development.
           </p>
         </motion.div>
 
-        {/* Project Cards */}
         <div className="grid gap-10 lg:grid-cols-2">
           {projects.map((project, index) => (
             <motion.article
@@ -84,7 +77,6 @@ export default function Projects() {
               whileHover={{ y: -8 }}
               className="group overflow-hidden rounded-3xl border border-cyan-500/20 bg-[#161B2F] transition-all duration-300 hover:border-cyan-400/70 hover:shadow-[0_0_40px_rgba(0,212,255,0.18)]"
             >
-              {/* Screenshot or Placeholder */}
               <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#6C63FF] via-blue-600 to-cyan-500">
                 {project.image ? (
                   <Image
@@ -97,9 +89,9 @@ export default function Projects() {
                 ) : (
                   <div className="flex h-full items-center justify-center">
                     <div className="text-center">
-                      <span className="text-6xl">💻</span>
+                      <span className="text-6xl">{project.title.startsWith("NoorFlowAI") ? "⚡" : "💻"}</span>
                       <p className="mt-4 font-medium text-white/80">
-                        Preview coming soon
+                        {project.title.startsWith("NoorFlowAI") ? "AI Automation Platform" : "Preview coming soon"}
                       </p>
                     </div>
                   </div>
@@ -112,12 +104,9 @@ export default function Projects() {
                 )}
               </div>
 
-              {/* Project Information */}
               <div className="p-8">
                 <h3 className="text-3xl font-bold">{project.title}</h3>
-                <p className="mt-5 leading-8 text-gray-400">
-                  {project.description}
-                </p>
+                <p className="mt-5 leading-8 text-gray-400">{project.description}</p>
 
                 <div className="mt-7 flex flex-wrap gap-3">
                   {project.tech.map((technology) => (
@@ -141,12 +130,12 @@ export default function Projects() {
                       <Code2 size={19} />
                       GitHub
                     </a>
-                  ) : (
+                  ) : project.demo === "#" ? (
                     <span className="inline-flex cursor-not-allowed items-center gap-2 rounded-xl bg-white/5 px-6 py-3 font-semibold text-gray-500">
                       <Code2 size={19} />
                       Coming Soon
                     </span>
-                  )}
+                  ) : null}
 
                   {project.demo !== "#" ? (
                     <a
