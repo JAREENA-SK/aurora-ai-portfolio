@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 
@@ -66,6 +66,32 @@ const statistics = [
 ];
 
 export default function Hero() {
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+
+    const startVideo = () => {
+      void video.play().catch(() => {
+        // Browser may delay autoplay until the tab is active.
+      });
+    };
+
+    startVideo();
+    video.addEventListener("canplay", startVideo);
+    document.addEventListener("visibilitychange", startVideo);
+
+    return () => {
+      video.removeEventListener("canplay", startVideo);
+      document.removeEventListener("visibilitychange", startVideo);
+    };
+  }, []);
+
   return (
     <section className="relative min-h-[85vh] overflow-hidden px-5 py-12 sm:px-6 lg:py-16">
       {/* Background glows */}
@@ -254,16 +280,20 @@ export default function Hero() {
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[#0F172A]">
               <video
+                ref={heroVideoRef}
                 autoPlay
                 muted
                 loop
                 playsInline
-                preload="metadata"
-                poster="/profile/shaik-jareena-avatar.png"
+                preload="auto"
                 aria-label="Professional motion portrait of Shaik Jareena"
                 className="absolute inset-0 h-full w-full object-cover object-center"
+                onLoadedData={(event) => {
+                  event.currentTarget.muted = true;
+                  void event.currentTarget.play().catch(() => undefined);
+                }}
               >
-                <source src="/profile/shaik-jareena-motion.mp4" type="video/mp4" />
+                <source src="/profile/shaik-jareena-motion.mp4?v=2" type="video/mp4" />
               </video>
 
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0B1020] via-[#0B1020]/70 to-transparent px-6 pb-6 pt-16">
