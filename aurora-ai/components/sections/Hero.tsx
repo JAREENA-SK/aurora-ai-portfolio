@@ -103,7 +103,7 @@ export default function Hero() {
         playsInline
         preload="auto"
         aria-hidden="true"
-        className="absolute inset-y-0 right-[-5%] z-0 h-full w-full object-cover object-[72%_center] lg:w-[70%] lg:object-cover lg:object-center"
+        className="absolute inset-y-0 right-[-5%] z-0 h-full w-full object-cover object-[72%_center] lg:w-[64%] lg:object-contain lg:object-right"
         onLoadedData={(event) => {
           event.currentTarget.muted = true;
           void event.currentTarget.play().catch(() => undefined);
