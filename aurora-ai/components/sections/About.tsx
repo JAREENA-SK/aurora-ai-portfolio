@@ -27,12 +27,26 @@ export default function About() {
       id="about"
       className="relative overflow-hidden bg-[#0B1020] px-5 py-24 text-white sm:px-6"
     >
-      {/* Existing portrait used as a subtle About background */}
+      {/* Keep the portrait at its natural aspect ratio on the right instead of zooming it with bg-cover */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full bg-[url('/profile/about-jareena.png')] bg-cover bg-[position:62%_center] bg-no-repeat opacity-100 lg:bg-[position:70%_center]"
+        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[62%] overflow-hidden lg:block"
+        style={{
+          WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 24%, black 100%)",
+          maskImage: "linear-gradient(to right, transparent 0%, black 24%, black 100%)",
+        }}
+      >
+        <img
+          src="/profile/about-jareena.png"
+          alt=""
+          className="h-full w-full object-contain object-right"
+        />
+      </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[url('/profile/about-jareena.png')] bg-cover bg-[position:64%_center] bg-no-repeat opacity-35 lg:hidden"
       />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0B1020] from-0% via-[#0B1020]/95 via-42% to-transparent to-72%" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0B1020] from-0% via-[#0B1020]/95 via-40% to-[#0B1020]/5 to-68%" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0B1020]/35 via-transparent to-transparent" />
       <div className="pointer-events-none absolute right-[18%] top-1/3 h-80 w-80 rounded-full bg-purple-500/10 blur-3xl" />
       <div className="pointer-events-none absolute right-[35%] top-1/2 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
