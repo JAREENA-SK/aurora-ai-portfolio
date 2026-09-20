@@ -17,135 +17,51 @@ type SkillCategory = {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "Software Development",
-    icon: "💻",
-    description:
-      "Programming, automation and modern application-development technologies.",
+    title: "AI Automation & Orchestration",
+    icon: "🤖",
+    description: "Engineering intelligent workflows, agentic systems and production-ready automation.",
     skills: [
-      {
-        name: "Python",
-        level: 85,
-        label: "Experienced",
-      },
-      {
-        name: "C Programming",
-        level: 78,
-        label: "Proficient",
-      },
-      {
-        name: "React",
-        level: 72,
-        label: "Working Knowledge",
-      },
-      {
-        name: "Next.js",
-        level: 72,
-        label: "Working Knowledge",
-      },
-      {
-        name: "TypeScript",
-        level: 65,
-        label: "Developing",
-      },
+      { name: "n8n Orchestration", level: 88, label: "Advanced" },
+      { name: "Python Automation", level: 85, label: "Experienced" },
+      { name: "Agentic AI Workflows", level: 82, label: "Proficient" },
+      { name: "OpenAI API Integration", level: 82, label: "Proficient" },
+      { name: "API & Data Pipelines", level: 84, label: "Experienced" },
     ],
   },
   {
-    title: "Project & Operations",
-    icon: "📋",
-    description:
-      "Planning, coordination, delivery monitoring and stakeholder communication.",
+    title: "Backend & State Infrastructure",
+    icon: "⚙️",
+    description: "Scalable backend foundations for stateful automation and AI applications.",
     skills: [
-      {
-        name: "Project Planning",
-        level: 88,
-        label: "Experienced",
-      },
-      {
-        name: "Team Coordination",
-        level: 88,
-        label: "Experienced",
-      },
-      {
-        name: "Task Management",
-        level: 85,
-        label: "Experienced",
-      },
-      {
-        name: "Delivery Tracking",
-        level: 82,
-        label: "Proficient",
-      },
-      {
-        name: "Stakeholder Communication",
-        level: 80,
-        label: "Proficient",
-      },
+      { name: "Supabase", level: 84, label: "Experienced" },
+      { name: "Vercel", level: 82, label: "Proficient" },
+      { name: "Cloudflare", level: 78, label: "Proficient" },
+      { name: "Next.js", level: 76, label: "Working Knowledge" },
+      { name: "TypeScript", level: 70, label: "Working Knowledge" },
     ],
   },
   {
-    title: "Engineering Tools",
+    title: "DevOps & Engineering",
     icon: "🛠️",
-    description:
-      "Tools used for source control, issue tracking, automation and development.",
+    description: "Production software practices, CI/CD, source control and complex debugging.",
     skills: [
-      {
-        name: "Git",
-        level: 85,
-        label: "Experienced",
-      },
-      {
-        name: "Jira",
-        level: 88,
-        label: "Experienced",
-      },
-      {
-        name: "Linux",
-        level: 82,
-        label: "Proficient",
-      },
-      {
-        name: "Jenkins",
-        level: 78,
-        label: "Proficient",
-      },
-      {
-        name: "Bitbucket",
-        level: 78,
-        label: "Proficient",
-      },
+      { name: "Git", level: 85, label: "Experienced" },
+      { name: "Jenkins / CI/CD", level: 80, label: "Proficient" },
+      { name: "Linux", level: 82, label: "Proficient" },
+      { name: "Jira", level: 88, label: "Experienced" },
+      { name: "Bitbucket", level: 78, label: "Proficient" },
     ],
   },
   {
-    title: "Leadership & Mentoring",
+    title: "Technical Leadership",
     icon: "🎯",
-    description:
-      "Team guidance, technical mentoring, training and career-readiness support.",
+    description: "Leading technical delivery while aligning architecture, execution and business outcomes.",
     skills: [
-      {
-        name: "Team Leadership",
-        level: 85,
-        label: "Experienced",
-      },
-      {
-        name: "Project Mentoring",
-        level: 90,
-        label: "Experienced",
-      },
-      {
-        name: "Technical Training",
-        level: 85,
-        label: "Experienced",
-      },
-      {
-        name: "Interview Preparation",
-        level: 88,
-        label: "Experienced",
-      },
-      {
-        name: "Presentation Skills",
-        level: 82,
-        label: "Proficient",
-      },
+      { name: "Technical Coordination", level: 88, label: "Experienced" },
+      { name: "Sprint & Delivery Leadership", level: 84, label: "Experienced" },
+      { name: "Technical Mentoring", level: 90, label: "Experienced" },
+      { name: "Problem Solving", level: 88, label: "Experienced" },
+      { name: "Stakeholder Communication", level: 82, label: "Proficient" },
     ],
   },
 ];
