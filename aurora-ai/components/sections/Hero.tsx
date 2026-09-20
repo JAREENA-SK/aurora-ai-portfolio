@@ -134,18 +134,7 @@ export default function Hero() {
             transition={{ delay: 0.45 }}
             className="mb-6 min-h-[72px] text-xl font-semibold text-gray-200 sm:min-h-[44px] sm:text-2xl md:text-3xl"
           >
-            <TypeAnimation
-              sequence={[
-                "Senior Software Engineer",
-                1800,
-                "Project Manager",
-                1800,
-                "Operations Manager",
-                1800,
-              ]}
-              speed={50}
-              repeat={Infinity}
-            />
+            <span>Senior AI Automation Engineer &amp; Workflow Architect</span>
           </motion.div>
 
           {/* Description */}
@@ -156,9 +145,7 @@ export default function Hero() {
             transition={{ delay: 0.7 }}
             className="mx-auto mb-9 max-w-xl text-base leading-7 text-gray-400 sm:text-lg sm:leading-8 lg:mx-0"
           >
-            Experienced in software engineering, project coordination, team
-            leadership, automation and technical mentoring. Currently exploring
-            remote opportunities in project management and operations.
+            I bridge the gap between production-grade software engineering and cutting-edge Agentic AI. Specializing in advanced n8n orchestration, complex Python data pipelines, and scalable backend infrastructure for autonomous systems.
           </motion.p>
 
           {/* Buttons */}
@@ -282,7 +269,7 @@ export default function Hero() {
                 </p>
 
                 <p className="mt-2 text-sm font-medium text-cyan-300 sm:text-base">
-                  Senior Software Engineer • Project Manager
+                  Senior AI Automation Engineer • Workflow Architect
                 </p>
               </div>
             </div>
