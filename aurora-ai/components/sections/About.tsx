@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const highlights = [
   {
-    value: "3+",
+    value: "3.5+",
     label: "Years of Experience",
   },
   {
@@ -41,44 +41,32 @@ export default function About() {
           </p>
 
           <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
-            My Professional Story
+            AI Automation Engineering
           </h2>
 
           <div className="mt-8 space-y-5 text-base leading-8 text-gray-400 sm:text-lg">
             <p>
-              I am a software engineering professional with experience at
-              Micron, Qualcomm, and Sevitech Systems, where I worked across
-              automation, software development, technical problem-solving, team
-              coordination, and project delivery.
+              I am a Senior Software Engineer with 3.5+ years of experience engineering core automation, infrastructure pipelines, and intelligent workflows at enterprise scale (Micron, Qualcomm).
             </p>
-
             <p>
-              My experience includes Python automation, C programming, Git,
-              Jenkins, Bitbucket, Jira, Linux, technical debugging, and
-              collaboration with engineering teams.
+              Unlike traditional low-code configuration builders, my approach to AI Automation is deeply rooted in production-grade software practices. I leverage a robust foundational background in Python, CI/CD (Jenkins), Git version control, and complex debugging to architect highly reliable, scalable AI agent systems.
             </p>
-
             <p>
-              I also worked as a technical trainer and project mentor, helping
-              graduation students plan projects, improve presentations, prepare
-              for interviews, and build confidence for employment.
+              My sweet spot lies in engineering advanced n8n workflow frameworks, state-management architectures via Supabase, and designing custom Python nodes to handle edge-case data transformations. Additionally, my background as a technical coordinator and mentor allows me to seamlessly manage complex technical project lifecycles, lead development sprints, and align technical architecture directly with business delivery goals.
             </p>
-
             <p>
-              I am currently exploring remote opportunities in project
-              management and operations management, where I can combine my
-              technical background, leadership experience, and ability to
-              coordinate people and processes.
+              <span className="font-semibold text-white">Active Stack &amp; Tooling:</span> n8n, Python, Supabase, Vercel, Cloudflare, OpenAI API, Git, Jira, Jenkins, Linux.
             </p>
           </div>
 
           <div className="mt-9 flex flex-wrap gap-3">
             {[
-              "Software Engineering",
-              "Project Coordination",
-              "Team Leadership",
-              "Operations Management",
-              "Technical Mentoring",
+              "AI Automation",
+              "n8n Orchestration",
+              "Python",
+              "Supabase",
+              "Agentic AI",
+              "Technical Leadership",
             ].map((item) => (
               <span
                 key={item}
