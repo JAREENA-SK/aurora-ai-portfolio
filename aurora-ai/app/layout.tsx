@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shaik Jareena | Senior Software Engineer",
+  title: "Shaik Jareena | Senior AI Automation Engineer",
   description:
-    "Portfolio of Shaik Jareena, a Senior Software Engineer with experience in software development, project leadership, automation, technical mentoring, and operations management.",
+    "Portfolio of Shaik Jareena, Senior AI Automation Engineer and Workflow Architect specializing in n8n orchestration, Python automation, Agentic AI, Supabase, CI/CD and scalable backend systems.",
   manifest: "/manifest.webmanifest",
   keywords: [
     "Shaik Jareena",
