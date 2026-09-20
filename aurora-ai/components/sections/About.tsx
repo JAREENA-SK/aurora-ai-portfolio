@@ -30,10 +30,10 @@ export default function About() {
       {/* Existing portrait used as a subtle About background */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 h-full w-full bg-[url('/profile/about-jareena.png')] bg-cover bg-[position:72%_28%] bg-no-repeat opacity-35 lg:w-[58%] lg:bg-[position:68%_30%]"
+        className="pointer-events-none absolute inset-0 h-full w-full bg-[url('/profile/about-jareena.png')] bg-cover bg-[position:68%_22%] bg-no-repeat opacity-100 lg:bg-[position:72%_20%]"
       />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0B1020] via-[#0B1020]/95 to-[#0B1020]/30" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0B1020]/90 via-transparent to-[#0B1020]/55" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0B1020] from-0% via-[#0B1020]/95 via-43% to-[#0B1020]/15 to-72%" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0B1020]/70 via-transparent to-[#0B1020]/20" />
       <div className="pointer-events-none absolute right-[18%] top-1/3 h-80 w-80 rounded-full bg-purple-500/10 blur-3xl" />
       <div className="pointer-events-none absolute right-[35%] top-1/2 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
 
