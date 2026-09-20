@@ -27,18 +27,11 @@ export default function About() {
       id="about"
       className="relative overflow-hidden bg-[#0B1020] px-5 py-24 text-white sm:px-6"
     >
-      {/* Existing portrait/video carried into About as a subtle background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
+      {/* Existing portrait used as a subtle About background */}
+      <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 h-full w-full object-cover object-[72%_28%] opacity-35 lg:w-[58%] lg:object-cover lg:object-[68%_30%]"
-      >
-        <source src="/profile/shaik-jareena-motion.mp4?v=4" type="video/mp4" />
-      </video>
+        className="pointer-events-none absolute inset-y-0 right-0 h-full w-full bg-[url('/profile/shaik-jareena-avatar.png')] bg-cover bg-[position:72%_28%] bg-no-repeat opacity-35 lg:w-[58%] lg:bg-[position:68%_30%]"
+      />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0B1020] via-[#0B1020]/95 to-[#0B1020]/30" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0B1020]/90 via-transparent to-[#0B1020]/55" />
       <div className="pointer-events-none absolute right-[18%] top-1/3 h-80 w-80 rounded-full bg-purple-500/10 blur-3xl" />
