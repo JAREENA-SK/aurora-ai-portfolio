@@ -109,7 +109,7 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.7 }}
-          className="rounded-3xl border border-cyan-400/25 bg-[#11182A]/80 p-6 shadow-[0_18px_60px_rgba(0,0,0,0.28)] backdrop-blur-md transition-all duration-300 hover:border-cyan-400/60 hover:shadow-[0_0_35px_rgba(0,212,255,0.15)] sm:p-9 lg:translate-y-28"
+          className="rounded-3xl border border-cyan-400/25 bg-[#11182A]/80 p-6 shadow-[0_18px_60px_rgba(0,0,0,0.28)] backdrop-blur-md transition-all duration-300 hover:border-cyan-400/60 hover:shadow-[0_0_35px_rgba(0,212,255,0.15)] sm:p-9 lg:translate-y-40"
         >
           <div className="grid gap-5 sm:grid-cols-2">
             {highlights.map((highlight, index) => (
