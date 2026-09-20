@@ -103,7 +103,7 @@ export default function Hero() {
         playsInline
         preload="auto"
         aria-hidden="true"
-        className="absolute inset-0 z-0 h-full w-full object-cover object-[70%_center] lg:object-contain lg:object-right"
+        className="absolute inset-y-0 right-[-2%] z-0 h-full w-full object-cover object-[72%_center] lg:w-[64%] lg:object-cover lg:object-center"
         onLoadedData={(event) => {
           event.currentTarget.muted = true;
           void event.currentTarget.play().catch(() => undefined);
@@ -111,8 +111,12 @@ export default function Hero() {
       >
         <source src="/profile/shaik-jareena-motion.mp4?v=3" type="video/mp4" />
       </video>
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-[#070B17]/95 via-[#070B17]/65 to-[#070B17]/10" />
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-[#070B17]/35 via-transparent to-[#070B17]/10" />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-[#070B17] from-0% via-[#070B17]/95 via-42% to-transparent to-72%" />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-[#070B17]/45 via-transparent to-[#070B17]/15" />
+
+      {/* Soft ambient transition glow */}
+      <div className="pointer-events-none absolute right-[32%] top-1/3 z-[1] h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
+      <div className="pointer-events-none absolute right-[22%] top-1/4 z-[1] h-64 w-64 rounded-full bg-purple-500/10 blur-3xl" />
 
       {/* Background glows */}
 
