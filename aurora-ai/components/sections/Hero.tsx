@@ -103,7 +103,7 @@ export default function Hero() {
         playsInline
         preload="auto"
         aria-hidden="true"
-        className="absolute inset-y-0 right-[-2%] z-0 h-full w-full object-cover object-[72%_center] lg:w-[64%] lg:object-cover lg:object-center"
+        className="absolute inset-y-0 right-[-5%] z-0 h-full w-full object-cover object-[72%_center] lg:w-[70%] lg:object-cover lg:object-center"
         onLoadedData={(event) => {
           event.currentTarget.muted = true;
           void event.currentTarget.play().catch(() => undefined);
@@ -111,8 +111,11 @@ export default function Hero() {
       >
         <source src="/profile/shaik-jareena-motion.mp4?v=3" type="video/mp4" />
       </video>
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-[#070B17] from-0% via-[#070B17]/95 via-42% to-transparent to-72%" />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-[#070B17] from-0% via-[#070B17]/95 via-38% to-transparent to-68%" />
       <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-[#070B17]/45 via-transparent to-[#070B17]/15" />
+
+      {/* Subtle AI/network atmosphere */}
+      <div className="pointer-events-none absolute inset-0 z-[1] opacity-30 [background-image:radial-gradient(circle_at_center,rgba(34,211,238,0.35)_1px,transparent_1.5px)] [background-size:44px_44px] [mask-image:linear-gradient(to_right,transparent_8%,black_42%,transparent_82%)]" />
 
       {/* Soft ambient transition glow */}
       <div className="pointer-events-none absolute right-[32%] top-1/3 z-[1] h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
