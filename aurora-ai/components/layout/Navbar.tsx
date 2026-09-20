@@ -67,7 +67,7 @@ export default function Navbar() {
             </span>
 
             <span className="mt-1 text-[9px] font-medium uppercase tracking-[0.2em] text-gray-400 sm:text-[11px] sm:tracking-[0.28em]">
-              Senior Software Engineer
+              AI Automation Engineer
             </span>
           </a>
 
