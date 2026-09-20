@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
@@ -254,14 +253,18 @@ export default function Hero() {
             className="relative z-10 w-full overflow-hidden rounded-[2rem] border border-cyan-500/20 bg-[#161B2F]/90 p-4 shadow-[0_0_45px_rgba(0,212,255,0.24)] backdrop-blur-md sm:p-5"
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[#0F172A]">
-              <Image
-                src="/profile/shaik-jareena-avatar.png"
-                alt="Illustrated portrait of Shaik Jareena"
-                fill
-                priority
-                sizes="(max-width: 1024px) 90vw, 430px"
-                className="object-cover object-top"
-              />
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster="/profile/shaik-jareena-avatar.png"
+                aria-label="Professional motion portrait of Shaik Jareena"
+                className="absolute inset-0 h-full w-full object-cover object-center"
+              >
+                <source src="/profile/shaik-jareena-motion.mp4" type="video/mp4" />
+              </video>
 
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0B1020] via-[#0B1020]/70 to-transparent px-6 pb-6 pt-16">
                 <p className="text-2xl font-bold text-white">
