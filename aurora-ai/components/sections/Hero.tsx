@@ -103,7 +103,7 @@ export default function Hero() {
         playsInline
         preload="auto"
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover object-center"
+        className="absolute inset-y-0 right-0 h-full w-full object-contain object-right"
         onLoadedData={(event) => {
           event.currentTarget.muted = true;
           void event.currentTarget.play().catch(() => undefined);
@@ -111,8 +111,8 @@ export default function Hero() {
       >
         <source src="/profile/shaik-jareena-motion.mp4?v=3" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-[#070B17]/75" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#070B17]/95 via-[#070B17]/75 to-[#070B17]/25" />
+      <div className="absolute inset-0 bg-[#070B17]" />
+      <div className="absolute inset-y-0 right-0 w-full bg-gradient-to-r from-[#070B17] via-[#070B17]/55 to-transparent lg:w-[72%]" />
 
       {/* Background glows */}
 
