@@ -30,7 +30,7 @@ export default function About() {
       {/* Existing portrait used as a subtle About background */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 h-full w-full bg-[url('/profile/shaik-jareena-avatar.png')] bg-cover bg-[position:72%_28%] bg-no-repeat opacity-35 lg:w-[58%] lg:bg-[position:68%_30%]"
+        className="pointer-events-none absolute inset-y-0 right-0 h-full w-full bg-[url('/profile/about-jareena.png')] bg-cover bg-[position:72%_28%] bg-no-repeat opacity-35 lg:w-[58%] lg:bg-[position:68%_30%]"
       />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0B1020] via-[#0B1020]/95 to-[#0B1020]/30" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0B1020]/90 via-transparent to-[#0B1020]/55" />
