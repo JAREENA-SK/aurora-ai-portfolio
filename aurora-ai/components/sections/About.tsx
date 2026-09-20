@@ -25,9 +25,26 @@ export default function About() {
   return (
     <section
       id="about"
-      className="bg-[#0B1020] px-5 py-24 text-white sm:px-6"
+      className="relative overflow-hidden bg-[#0B1020] px-5 py-24 text-white sm:px-6"
     >
-      <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
+      {/* Existing portrait/video carried into About as a subtle background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 right-0 h-full w-full object-cover object-[72%_28%] opacity-35 lg:w-[58%] lg:object-cover lg:object-[68%_30%]"
+      >
+        <source src="/profile/shaik-jareena-motion.mp4?v=4" type="video/mp4" />
+      </video>
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0B1020] via-[#0B1020]/95 to-[#0B1020]/30" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0B1020]/90 via-transparent to-[#0B1020]/55" />
+      <div className="pointer-events-none absolute right-[18%] top-1/3 h-80 w-80 rounded-full bg-purple-500/10 blur-3xl" />
+      <div className="pointer-events-none absolute right-[35%] top-1/2 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
+
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
         {/* About Content */}
 
         <motion.div
@@ -85,7 +102,7 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.7 }}
-          className="rounded-3xl border border-cyan-500/20 bg-[#161B2F] p-6 transition-all duration-300 hover:border-cyan-400/60 hover:shadow-[0_0_35px_rgba(0,212,255,0.15)] sm:p-9"
+          className="rounded-3xl border border-cyan-400/25 bg-[#11182A]/80 p-6 shadow-[0_18px_60px_rgba(0,0,0,0.28)] backdrop-blur-md transition-all duration-300 hover:border-cyan-400/60 hover:shadow-[0_0_35px_rgba(0,212,255,0.15)] sm:p-9"
         >
           <div className="grid gap-5 sm:grid-cols-2">
             {highlights.map((highlight, index) => (
@@ -99,7 +116,7 @@ export default function About() {
                   delay: index * 0.1,
                 }}
                 whileHover={{ y: -5 }}
-                className="rounded-2xl border border-white/5 bg-[#0F172A] p-6 text-center transition-all duration-300 hover:border-cyan-500/30"
+                className="rounded-2xl border border-white/10 bg-[#0F172A]/85 p-6 text-center shadow-lg backdrop-blur-sm transition-all duration-300 hover:border-cyan-500/40"
               >
                 <p className="text-3xl font-extrabold text-cyan-400 sm:text-4xl">
                   {highlight.value}
