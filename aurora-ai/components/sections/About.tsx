@@ -25,12 +25,12 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-[#0B1020] px-5 py-24 text-white sm:px-6"
+      className="relative overflow-hidden bg-[#0B1020] px-5 py-24 text-white sm:px-6 lg:min-h-[900px] lg:pb-40"
     >
       {/* Keep the portrait at its natural aspect ratio on the right instead of zooming it with bg-cover */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[62%] overflow-hidden lg:block"
+        className="pointer-events-none absolute right-0 top-12 hidden h-[76%] w-[58%] overflow-hidden lg:block"
         style={{
           WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 24%, black 100%)",
           maskImage: "linear-gradient(to right, transparent 0%, black 24%, black 100%)",
@@ -39,7 +39,7 @@ export default function About() {
         <img
           src="/profile/about-jareena.png"
           alt=""
-          className="h-full w-full object-contain object-right"
+          className="h-full w-full object-contain object-right-top"
         />
       </div>
       <div
@@ -51,7 +51,7 @@ export default function About() {
       <div className="pointer-events-none absolute right-[18%] top-1/3 h-80 w-80 rounded-full bg-purple-500/10 blur-3xl" />
       <div className="pointer-events-none absolute right-[35%] top-1/2 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
+      <div className="relative z-10 mx-auto grid max-w-7xl items-start gap-14 lg:grid-cols-2">
         {/* About Content */}
 
         <motion.div
@@ -109,7 +109,7 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.7 }}
-          className="rounded-3xl border border-cyan-400/25 bg-[#11182A]/80 p-6 shadow-[0_18px_60px_rgba(0,0,0,0.28)] backdrop-blur-md transition-all duration-300 hover:border-cyan-400/60 hover:shadow-[0_0_35px_rgba(0,212,255,0.15)] sm:p-9 lg:translate-y-64"
+          className="rounded-3xl border border-cyan-400/25 bg-[#11182A]/80 p-6 shadow-[0_18px_60px_rgba(0,0,0,0.28)] backdrop-blur-md transition-all duration-300 hover:border-cyan-400/60 hover:shadow-[0_0_35px_rgba(0,212,255,0.15)] sm:p-9 lg:mt-[560px]"
         >
           <div className="grid gap-5 sm:grid-cols-2">
             {highlights.map((highlight, index) => (
