@@ -3,22 +3,10 @@
 import { motion } from "framer-motion";
 
 const highlights = [
-  {
-    value: "3.5+",
-    label: "Years of Experience",
-  },
-  {
-    value: "3",
-    label: "Software Companies",
-  },
-  {
-    value: "1 Year",
-    label: "Project Mentoring",
-  },
-  {
-    value: "Remote",
-    label: "Opportunities Preferred",
-  },
+  { value: "4", label: "Featured Projects" },
+  { value: "1", label: "Previous Professional Role" },
+  { value: "B.Com", label: "Education" },
+  { value: "Junior", label: "AI Automation Roles" },
 ];
 
 export default function About() {
@@ -70,27 +58,27 @@ export default function About() {
 
           <div className="mt-8 space-y-5 text-base leading-8 text-gray-400 sm:text-lg">
             <p>
-              I am a Senior Software Engineer with 3.5+ years of experience engineering core automation, infrastructure pipelines, and intelligent workflows at enterprise scale (Micron, Qualcomm).
+              I’m an aspiring AI Automation Engineer with a Bachelor of Commerce and previous professional experience at Sevitech. I’m building practical projects around AI-assisted workflows, YouTube content automation, research-driven lead generation, and web development.
             </p>
             <p>
-              Unlike traditional low-code configuration builders, my approach to AI Automation is deeply rooted in production-grade software practices. I leverage a robust foundational background in Python, CI/CD (Jenkins), Git version control, and complex debugging to architect highly reliable, scalable AI agent systems.
+              I’m developing my skills through hands-on work with n8n, Python, AI tools, and API integrations. I focus on understanding the full workflow—from collecting information and processing it to connecting services and reducing repetitive manual steps.
             </p>
             <p>
-              My sweet spot lies in engineering advanced n8n workflow frameworks, state-management architectures via Supabase, and designing custom Python nodes to handle edge-case data transformations. Additionally, my background as a technical coordinator and mentor allows me to seamlessly manage complex technical project lifecycles, lead development sprints, and align technical architecture directly with business delivery goals.
+              In my previous role, I coordinated team activities, assigned and tracked tasks in Jira, scheduled meetings, and reported progress to my manager. I bring that coordination experience alongside a strong willingness to learn, test, and improve automation workflows.
             </p>
             <p>
-              <span className="font-semibold text-white">Active Stack &amp; Tooling:</span> n8n, Python, Supabase, Vercel, Cloudflare, OpenAI API, Git, Jira, Jenkins, Linux.
+              <span className="font-semibold text-white">Tools I’m working with:</span> n8n, Python, ChatGPT/OpenAI, Google Gemini, API integrations, YouTube API, Git, CI/CD, Jira, and MS Office.
             </p>
           </div>
 
           <div className="mt-9 flex flex-wrap gap-3">
             {[
               "AI Automation",
-              "n8n Orchestration",
+              "n8n Workflows",
               "Python",
-              "Supabase",
-              "Agentic AI",
-              "Technical Leadership",
+              "AI APIs",
+              "YouTube Automation",
+              "Jira & Team Coordination",
             ].map((item) => (
               <span
                 key={item}
