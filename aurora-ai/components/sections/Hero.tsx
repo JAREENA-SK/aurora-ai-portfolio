@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 type CounterProps = {
@@ -9,36 +9,7 @@ type CounterProps = {
 };
 
 function Counter({ end, suffix = "" }: CounterProps) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let current = 0;
-    const duration = 1200;
-    const intervalTime = 30;
-    const totalSteps = duration / intervalTime;
-    const increment = end / totalSteps;
-
-    const timer = window.setInterval(() => {
-      current += increment;
-
-      if (current >= end) {
-        setCount(end);
-        window.clearInterval(timer);
-        return;
-      }
-
-      setCount(Math.floor(current));
-    }, intervalTime);
-
-    return () => window.clearInterval(timer);
-  }, [end]);
-
-  return (
-    <span>
-      {count}
-      {suffix}
-    </span>
-  );
+  return <span>{end}{suffix}</span>;
 }
 
 const statistics = [
