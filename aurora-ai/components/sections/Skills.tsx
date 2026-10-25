@@ -17,51 +17,39 @@ type SkillCategory = {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "AI Automation & Orchestration",
+    title: "AI Automation & Workflow Tools",
     icon: "🤖",
-    description: "Engineering intelligent workflows, agentic systems and production-ready automation.",
+    description: "Tools used while building practical AI and workflow automation projects.",
     skills: [
-      { name: "n8n Orchestration", level: 88, label: "Advanced" },
-      { name: "Python Automation", level: 85, label: "Experienced" },
-      { name: "Agentic AI Workflows", level: 82, label: "Proficient" },
-      { name: "OpenAI API Integration", level: 82, label: "Proficient" },
-      { name: "API & Data Pipelines", level: 84, label: "Experienced" },
+      { name: "n8n", level: 65, label: "Project Use" },
+      { name: "Python", level: 55, label: "Working Knowledge" },
+      { name: "ChatGPT / OpenAI API", level: 60, label: "Project Use" },
+      { name: "Google Gemini API", level: 55, label: "Project Use" },
+      { name: "API Integrations", level: 55, label: "Developing" },
     ],
   },
   {
-    title: "Backend & State Infrastructure",
-    icon: "⚙️",
-    description: "Scalable backend foundations for stateful automation and AI applications.",
+    title: "Automation Use Cases",
+    icon: "🔁",
+    description: "Practical workflows explored across personal projects.",
     skills: [
-      { name: "Supabase", level: 84, label: "Experienced" },
-      { name: "Vercel", level: 82, label: "Proficient" },
-      { name: "Cloudflare", level: 78, label: "Proficient" },
-      { name: "Next.js", level: 76, label: "Working Knowledge" },
-      { name: "TypeScript", level: 70, label: "Working Knowledge" },
+      { name: "YouTube Content Automation", level: 60, label: "Project Use" },
+      { name: "Google Search & Research APIs", level: 50, label: "Project Use" },
+      { name: "Lead Generation Workflows", level: 50, label: "Project Use" },
+      { name: "Telephony / Calling API Concepts", level: 45, label: "Developing" },
+      { name: "CRM Workflow Integration", level: 45, label: "Developing" },
     ],
   },
   {
-    title: "DevOps & Engineering",
+    title: "Software & Delivery Tools",
     icon: "🛠️",
-    description: "Production software practices, CI/CD, source control and complex debugging.",
+    description: "Tools and practices used for software work and team coordination.",
     skills: [
-      { name: "Git", level: 85, label: "Experienced" },
-      { name: "Jenkins / CI/CD", level: 80, label: "Proficient" },
-      { name: "Linux", level: 82, label: "Proficient" },
-      { name: "Jira", level: 88, label: "Experienced" },
-      { name: "Bitbucket", level: 78, label: "Proficient" },
-    ],
-  },
-  {
-    title: "Technical Leadership",
-    icon: "🎯",
-    description: "Leading technical delivery while aligning architecture, execution and business outcomes.",
-    skills: [
-      { name: "Technical Coordination", level: 88, label: "Experienced" },
-      { name: "Sprint & Delivery Leadership", level: 84, label: "Experienced" },
-      { name: "Technical Mentoring", level: 90, label: "Experienced" },
-      { name: "Problem Solving", level: 88, label: "Experienced" },
-      { name: "Stakeholder Communication", level: 82, label: "Proficient" },
+      { name: "Git", level: 55, label: "Working Knowledge" },
+      { name: "CI/CD Concepts", level: 45, label: "Familiar" },
+      { name: "Jira", level: 65, label: "Previous Work Use" },
+      { name: "MS Office", level: 65, label: "Working Knowledge" },
+      { name: "Team Coordination & Reporting", level: 70, label: "Previous Work Use" },
     ],
   },
 ];
@@ -126,8 +114,7 @@ export default function Skills() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-gray-400 sm:text-lg">
-            A combination of software engineering, project coordination,
-            technical tools, leadership and mentoring experience.
+            A practical snapshot of the tools I’m using and developing through projects and previous work experience.
           </p>
         </motion.div>
 
@@ -206,10 +193,10 @@ export default function Skills() {
               {[
                 "Problem Solving",
                 "Communication",
-                "Collaboration",
-                "Adaptability",
-                "Ownership",
+                "Team Coordination",
+                "Task Tracking",
                 "Continuous Learning",
+                "Hands-on Practice",
               ].map((strength) => (
                 <motion.span
                   key={strength}
