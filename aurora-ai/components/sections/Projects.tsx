@@ -6,24 +6,10 @@ import { Code2, ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "Aurora AI Portfolio",
+    title: "NoorFlow AI — YouTube Content Automation",
     description:
-      "A premium personal portfolio featuring responsive layouts, smooth animations, a polished illustrated avatar experience and a working contact form.",
-    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Three.js", "Framer Motion"],
-    image: "",
-    github: "https://github.com/JAREENA-SK/aurora-ai-portfolio",
-    demo: "https://aurora-ai-portfolio.vercel.app",
-    featured: true,
-    automation: false,
-    aurora: true,
-    hireReady: false,
-    salesOs: false,
-  },
-  {
-    title: "NoorFlowAI — AI Content Automation Platform",
-    description:
-      "An end-to-end AI-powered content operations and automation platform designed to manage content creation, approval workflows, metadata, video production, publishing readiness, scheduling and analytics from one centralized dashboard. It includes automated YouTube workflows, content calendar management, version approvals and AI-assisted growth tooling.",
-    tech: ["AI Automation", "Next.js", "TypeScript", "Supabase", "YouTube API", "GitHub Actions", "Analytics"],
+      "A project focused on automating daily content publishing for a YouTube channel. The workflow connects AI-assisted content tasks with publishing steps to reduce repetitive manual work. The portfolio highlights the intended workflow and the tools used in the project.",
+    tech: ["n8n", "Python", "OpenAI API", "Google Gemini API", "YouTube API"],
     image: "/projects/noorflowai-dashboard.png",
     github: "#",
     demo: "https://noor-flow-ai.vercel.app/",
@@ -34,24 +20,10 @@ const projects = [
     salesOs: false,
   },
   {
-    title: "HireReady — Final Year Project Hub",
+    title: "Sales-OS — Research-Driven Lead Generation",
     description:
-      "A guided project-learning platform for CSE and ECE students that takes teams from project selection through implementation, documentation, reviews and viva preparation. The platform is designed around genuine understanding, remote mentoring and structured project execution rather than simple project submission.",
-    tech: ["Career EdTech", "CSE & ECE", "Remote Mentoring", "Project Guidance", "Documentation", "Viva Preparation"],
-    image: "",
-    github: "#",
-    demo: "https://hireready-projecthub-preview.hireready-projecthub.workers.dev/#projects",
-    featured: true,
-    automation: false,
-    aurora: false,
-    hireReady: true,
-    salesOs: false,
-  },
-  {
-    title: "AI Sales OS — Client Acquisition Platform",
-    description:
-      "A client-acquisition operating system built to discover prospects, qualify leads, manage outreach, generate lightweight demos, track follow-ups, proposals, payments and onboarding from one dashboard. It combines CRM-style pipeline management with lead scoring, demo generation and sales workflow automation for India, UAE and Kuwait markets.",
-    tech: ["Sales Automation", "Lead Discovery", "CRM", "Demo Generation", "Pipeline Management", "Client Onboarding"],
+      "An automation project designed to research prospects, identify potential leads, and trigger outbound calls through a telephony integration. It brings together research, lead generation, calling, and CRM-related workflow concepts to reduce manual prospecting.",
+    tech: ["n8n", "Python", "Google Search / Research APIs", "Telephony API", "CRM Integration", "AI APIs"],
     image: "",
     github: "#",
     demo: "https://ai-sales-os-zeta.vercel.app/",
@@ -60,6 +32,34 @@ const projects = [
     aurora: false,
     hireReady: false,
     salesOs: true,
+  },
+  {
+    title: "Yaseen Juice Centre Website",
+    description:
+      "A website project for a local juice centre, created to present the business online and make its information easier for customers to find. This project demonstrates practical web development alongside my automation work.",
+    tech: ["Web Development", "Responsive UI", "Business Website"],
+    image: "",
+    github: "#",
+    demo: "#",
+    featured: true,
+    automation: false,
+    aurora: false,
+    hireReady: false,
+    salesOs: false,
+  },
+  {
+    title: "Aurora AI Portfolio",
+    description:
+      "My personal portfolio website, built to present my projects, technical skills, and professional background in a clear, responsive interface.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    image: "",
+    github: "https://github.com/JAREENA-SK/aurora-ai-portfolio",
+    demo: "https://aurora-ai-portfolio.vercel.app",
+    featured: true,
+    automation: false,
+    aurora: true,
+    hireReady: false,
+    salesOs: false,
   },
 ];
 
@@ -77,8 +77,7 @@ export default function Projects() {
           <p className="font-semibold uppercase tracking-[6px] text-cyan-400">Projects</p>
           <h2 className="mt-4 text-4xl font-bold sm:text-5xl">Featured Projects</h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-400">
-            A collection of projects and initiatives demonstrating technical learning,
-            problem-solving, automation, project coordination and modern web development.
+            Practical projects focused on AI workflows, YouTube publishing automation, research-driven lead generation, and web development. Project descriptions reflect the intended use cases and integrations.
           </p>
         </motion.div>
 
@@ -104,7 +103,7 @@ export default function Projects() {
                       <h4 className="mt-2 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-4xl font-extrabold leading-none text-transparent sm:text-5xl">
                         SHAIK JAREENA
                       </h4>
-                      <p className="mt-3 text-lg font-semibold text-white">Senior Software Engineer</p>
+                      <p className="mt-3 text-lg font-semibold text-white">Junior AI Automation Engineer</p>
                       <p className="mt-2 text-sm leading-6 text-gray-400">
                         Project management • automation • technical mentoring
                       </p>

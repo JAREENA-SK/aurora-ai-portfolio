@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 
+
 type Skill = {
   name: string;
-  level: number;
   label: string;
 };
 
@@ -17,86 +17,50 @@ type SkillCategory = {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "AI Automation & Orchestration",
+    title: "AI Automation & Workflow Tools",
     icon: "🤖",
-    description: "Engineering intelligent workflows, agentic systems and production-ready automation.",
+    description: "Tools used while building practical AI and workflow automation projects.",
     skills: [
-      { name: "n8n Orchestration", level: 88, label: "Advanced" },
-      { name: "Python Automation", level: 85, label: "Experienced" },
-      { name: "Agentic AI Workflows", level: 82, label: "Proficient" },
-      { name: "OpenAI API Integration", level: 82, label: "Proficient" },
-      { name: "API & Data Pipelines", level: 84, label: "Experienced" },
+      { name: "n8n", label: "Project Use" },
+      { name: "Python", label: "Working Knowledge" },
+      { name: "ChatGPT / OpenAI API", label: "Project Use" },
+      { name: "Google Gemini API", label: "Project Use" },
+      { name: "API Integrations", label: "Developing" },
     ],
   },
   {
-    title: "Backend & State Infrastructure",
-    icon: "⚙️",
-    description: "Scalable backend foundations for stateful automation and AI applications.",
+    title: "Automation Use Cases",
+    icon: "🔁",
+    description: "Practical workflows explored across personal projects.",
     skills: [
-      { name: "Supabase", level: 84, label: "Experienced" },
-      { name: "Vercel", level: 82, label: "Proficient" },
-      { name: "Cloudflare", level: 78, label: "Proficient" },
-      { name: "Next.js", level: 76, label: "Working Knowledge" },
-      { name: "TypeScript", level: 70, label: "Working Knowledge" },
+      { name: "YouTube Content Automation", label: "Project Use" },
+      { name: "Google Search & Research APIs", label: "Project Use" },
+      { name: "Lead Generation Workflows", label: "Project Use" },
+      { name: "Telephony / Calling API Concepts", label: "Developing" },
+      { name: "CRM Workflow Integration", label: "Developing" },
     ],
   },
   {
-    title: "DevOps & Engineering",
+    title: "Software & Delivery Tools",
     icon: "🛠️",
-    description: "Production software practices, CI/CD, source control and complex debugging.",
+    description: "Tools and practices used for software work and team coordination.",
     skills: [
-      { name: "Git", level: 85, label: "Experienced" },
-      { name: "Jenkins / CI/CD", level: 80, label: "Proficient" },
-      { name: "Linux", level: 82, label: "Proficient" },
-      { name: "Jira", level: 88, label: "Experienced" },
-      { name: "Bitbucket", level: 78, label: "Proficient" },
-    ],
-  },
-  {
-    title: "Technical Leadership",
-    icon: "🎯",
-    description: "Leading technical delivery while aligning architecture, execution and business outcomes.",
-    skills: [
-      { name: "Technical Coordination", level: 88, label: "Experienced" },
-      { name: "Sprint & Delivery Leadership", level: 84, label: "Experienced" },
-      { name: "Technical Mentoring", level: 90, label: "Experienced" },
-      { name: "Problem Solving", level: 88, label: "Experienced" },
-      { name: "Stakeholder Communication", level: 82, label: "Proficient" },
+      { name: "Git", label: "Working Knowledge" },
+      { name: "CI/CD Concepts", label: "Familiar" },
+      { name: "Jira", label: "Previous Work Use" },
+      { name: "MS Office", label: "Working Knowledge" },
+      { name: "Team Coordination & Reporting", label: "Previous Work Use" },
     ],
   },
 ];
 
-function SkillProgress({ skill, index }: { skill: Skill; index: number }) {
+function SkillProgress({ skill }: { skill: Skill }) {
   return (
-    <div>
-      <div className="mb-2 flex items-center justify-between gap-4">
-        <p className="font-medium text-gray-200">{skill.name}</p>
-
-        <span className="text-xs font-medium text-cyan-300">
-          {skill.label}
-        </span>
-      </div>
-
-      <div
-        className="h-2.5 overflow-hidden rounded-full bg-[#0B1020]"
-        role="progressbar"
-        aria-label={`${skill.name}: ${skill.label}`}
-        aria-valuemin={0}
-        aria-valuemax={100}
-        aria-valuenow={skill.level}
-      >
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: `${skill.level}%` }}
-          viewport={{ once: true, amount: 0.6 }}
-          transition={{
-            duration: 1,
-            delay: index * 0.08,
-            ease: "easeOut",
-          }}
-          className="h-full rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 shadow-[0_0_12px_rgba(0,212,255,0.45)]"
-        />
-      </div>
+    <div className="flex items-center justify-between gap-4 rounded-xl border border-white/5 bg-[#0B1020]/70 px-4 py-3">
+      <p className="font-medium text-gray-200">{skill.name}</p>
+      <span className="shrink-0 rounded-full border border-cyan-500/20 bg-cyan-500/5 px-3 py-1 text-xs font-medium text-cyan-300">
+        {skill.label}
+      </span>
     </div>
   );
 }
@@ -126,8 +90,7 @@ export default function Skills() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-gray-400 sm:text-lg">
-            A combination of software engineering, project coordination,
-            technical tools, leadership and mentoring experience.
+            A practical snapshot of the tools I’m using and developing through projects and previous work experience.
           </p>
         </motion.div>
 
@@ -170,12 +133,11 @@ export default function Skills() {
               {/* Progress Bars */}
 
               <div className="mt-9 space-y-6">
-                {category.skills.map((skill, skillIndex) => (
+                {category.skills.map((skill) => (
                   <SkillProgress
                     key={skill.name}
                     skill={skill}
-                    index={skillIndex}
-                  />
+                                      />
                 ))}
               </div>
             </motion.article>
@@ -206,10 +168,10 @@ export default function Skills() {
               {[
                 "Problem Solving",
                 "Communication",
-                "Collaboration",
-                "Adaptability",
-                "Ownership",
+                "Team Coordination",
+                "Task Tracking",
                 "Continuous Learning",
+                "Hands-on Practice",
               ].map((strength) => (
                 <motion.span
                   key={strength}

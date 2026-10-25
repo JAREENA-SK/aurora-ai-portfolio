@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
 
 type CounterProps = {
   end: number;
@@ -44,14 +43,14 @@ function Counter({ end, suffix = "" }: CounterProps) {
 
 const statistics = [
   {
-    value: 3,
-    suffix: "+",
-    label: "Years Experience",
-  },
-  {
     value: 4,
     suffix: "",
-    label: "Professional Roles",
+    label: "Featured Projects",
+  },
+  {
+    value: 1,
+    suffix: "",
+    label: "Previous Professional Role",
   },
   {
     value: 2,
@@ -186,7 +185,7 @@ export default function Hero() {
             transition={{ delay: 0.45 }}
             className="mb-6 min-h-[72px] text-xl font-semibold text-gray-200 sm:min-h-[44px] sm:text-2xl md:text-3xl"
           >
-            <span>Senior AI Automation Engineer &amp; Workflow Architect</span>
+            <span>Junior AI Automation Engineer | Workflow Developer</span>
           </motion.div>
 
           {/* Description */}
@@ -197,7 +196,7 @@ export default function Hero() {
             transition={{ delay: 0.7 }}
             className="mx-auto mb-9 max-w-xl text-base leading-7 text-gray-400 sm:text-lg sm:leading-8 lg:mx-0"
           >
-            I bridge the gap between production-grade software engineering and cutting-edge Agentic AI. Specializing in advanced n8n orchestration, complex Python data pipelines, and scalable backend infrastructure for autonomous systems.
+            I build practical AI and workflow automation projects using n8n, Python, and API integrations. My portfolio includes YouTube content automation, research-driven lead generation, and web development projects. I’m looking for a junior AI automation opportunity where I can solve real business problems and keep growing my technical skills.
           </motion.p>
 
           {/* Buttons */}
