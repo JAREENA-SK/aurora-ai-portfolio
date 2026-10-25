@@ -52,7 +52,7 @@ const skillCategories: SkillCategory[] = [
   },
 ];
 
-function SkillProgress({ skill }: { skill: Skill; index: number }) {
+function SkillProgress({ skill }: { skill: Skill }) {
   return (
     <div className="flex items-center justify-between gap-4 rounded-xl border border-white/5 bg-[#0B1020]/70 px-4 py-3">
       <p className="font-medium text-gray-200">{skill.name}</p>
@@ -131,7 +131,7 @@ export default function Skills() {
               {/* Progress Bars */}
 
               <div className="mt-9 space-y-6">
-                {category.skills.map((skill, skillIndex) => (
+                {category.skills.map((skill) => (
                   <SkillProgress
                     key={skill.name}
                     skill={skill}
