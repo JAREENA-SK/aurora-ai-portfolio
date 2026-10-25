@@ -17,12 +17,11 @@ export default function Footer() {
           </a>
 
           <p className="mt-2 text-sm font-medium uppercase tracking-[0.22em] text-gray-500">
-            Senior Software Engineer
+            Junior AI Automation Engineer
           </p>
 
           <p className="mt-4 max-w-md leading-7 text-gray-400">
-            Building reliable software solutions, supporting project delivery,
-            and creating meaningful digital experiences.
+            Building practical AI workflows with n8n, Python, and API integrations while growing through hands-on projects.
           </p>
         </div>
 
@@ -58,13 +57,6 @@ export default function Footer() {
           </a>
 
           <a
-            href="#certifications"
-            className="transition-colors duration-300 hover:text-cyan-400"
-          >
-            Certifications
-          </a>
-
-          <a
             href="#contact"
             className="transition-colors duration-300 hover:text-cyan-400"
           >
@@ -87,7 +79,7 @@ export default function Footer() {
 
       <div className="border-t border-cyan-500/20 px-6 py-6 text-center text-sm text-gray-500">
         © {new Date().getFullYear()} Shaik Jareena. Designed and developed with
-        Next.js, React, Tailwind CSS and Three.js.
+        Next.js, React, Tailwind CSS and Framer Motion.
       </div>
     </footer>
   );
