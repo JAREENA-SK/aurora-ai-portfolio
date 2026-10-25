@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 
 type Skill = {
   name: string;
