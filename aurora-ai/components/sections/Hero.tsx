@@ -24,14 +24,14 @@ const statistics = [
     label: "Previous Professional Role",
   },
   {
-    value: 2,
+    value: 3,
     suffix: "",
-    label: "Certifications",
+    label: "Languages",
   },
   {
-    value: 100,
-    suffix: "%",
-    label: "Dedication",
+    value: 1,
+    suffix: "",
+    label: "B.Com Degree",
   },
 ];
 
