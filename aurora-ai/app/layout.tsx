@@ -14,19 +14,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shaik Jareena | Senior AI Automation Engineer",
+  title: "Shaik Jareena | Junior AI Automation Engineer",
   description:
-    "Portfolio of Shaik Jareena, Senior AI Automation Engineer and Workflow Architect specializing in n8n orchestration, Python automation, Agentic AI, Supabase, CI/CD and scalable backend systems.",
+    "Portfolio of Shaik Jareena, junior AI automation and workflow developer showcasing n8n, Python, AI API integrations, YouTube content automation, lead generation, and web projects.",
   manifest: "/manifest.webmanifest",
   keywords: [
     "Shaik Jareena",
-    "Senior Software Engineer",
-    "Project Manager",
-    "Operations Manager",
+    "Junior AI Automation Engineer",
+    "Workflow Automation",
+    "n8n",
+    "Python",
+    "AI API Integrations",
     "Python",
     "Next.js",
     "React",
-    "Technical Support",
   ],
   authors: [
     {
