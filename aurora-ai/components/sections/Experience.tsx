@@ -9,40 +9,12 @@ import {
 
 const experience = [
   {
-    company: "Qualcomm",
-    role: "Software Engineer II",
-    period: "1.5 Years",
-    icon: Cpu,
+    company: "Sevitech Company",
+    role: "Senior Engineer",
+    period: "Jan 2022 – Apr 2022",
+    icon: BriefcaseBusiness,
     color: "from-cyan-500 to-blue-500",
-    skills: ["Python", "Linux", "Git", "Jira", "Automation", "Complex Debugging"],
-  },
-  {
-    company: "Micron Technology",
-    role: "Software Engineer",
-    period: "Enterprise Automation",
-    icon: BriefcaseBusiness,
-    color: "from-purple-500 to-pink-500",
-    skills: ["Python Automation", "Jenkins / CI/CD", "Bitbucket", "Linux", "Infrastructure Pipelines"],
-  },
-  {
-    company: "Sevitech",
-    role: "Senior Software Engineer",
-    period: "Technical Leadership",
-    icon: BriefcaseBusiness,
-    color: "from-green-500 to-cyan-500",
-    skills: ["Technical Leadership", "Sprint Coordination", "Planning", "Mentoring"],
-  },
-  {
-    company: "HireReady Program",
-    role: "Technical Project Mentor",
-    period: "Training & Placement",
-    icon: GraduationCap,
-    color: "from-orange-500 to-pink-500",
-    skills: [
-      "Project Management",
-      "Interview Prep",
-      "Career Guidance",
-    ],
+    skills: ["Jira Task Tracking", "Team Coordination", "Task Assignment", "Meeting Scheduling", "Progress Reporting"],
   },
 ];
 
@@ -63,9 +35,12 @@ export default function Experience() {
             Experience
           </p>
 
-          <h2 className="mt-4 text-5xl font-bold">
-            Professional Journey
+          <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
+            Professional Experience
           </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-gray-400 sm:text-lg">
+            Previous experience in team coordination and project tracking, complemented by hands-on AI automation projects.
+          </p>
         </motion.div>
 
         <div className="relative border-l border-cyan-500/30 pl-12">
