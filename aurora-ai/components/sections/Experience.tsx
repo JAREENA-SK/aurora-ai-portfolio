@@ -1,11 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  BriefcaseBusiness,
-  Cpu,
-  GraduationCap,
-} from "lucide-react";
+import { BriefcaseBusiness } from "lucide-react";
 
 const experience = [
   {
