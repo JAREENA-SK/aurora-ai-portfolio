@@ -25,7 +25,6 @@ export const metadata: Metadata = {
     "n8n",
     "Python",
     "AI API Integrations",
-    "Python",
     "Next.js",
     "React",
   ],
