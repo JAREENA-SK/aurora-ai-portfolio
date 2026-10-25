@@ -13,8 +13,8 @@ import {
 
 const opportunities = [
   "Remote Opportunities",
-  "Project Manager",
-  "Operations Manager",
+  "Junior AI Automation Engineer",
+  "Workflow Automation",
 ];
 
 export default function Contact() {
@@ -42,9 +42,7 @@ export default function Contact() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-400">
-            I&apos;m currently exploring remote opportunities in project
-            management and operations management. Feel free to contact me about
-            suitable roles, collaborations, or professional opportunities.
+            I&apos;m looking for junior AI automation and workflow development opportunities. Feel free to contact me about suitable roles, collaborations, or project opportunities.
           </p>
         </motion.div>
 
@@ -78,10 +76,10 @@ export default function Contact() {
                   <p className="font-semibold text-cyan-400">Email</p>
 
                   <a
-                    href="mailto:shaik.zianshaik@gmail.com"
+                    href="mailto:almuissu@gmail.com"
                     className="mt-1 block break-all text-gray-300 transition-colors duration-300 hover:text-cyan-400"
                   >
-                    shaik.zianshaik@gmail.com
+                    almuissu@gmail.com
                   </a>
                 </div>
               </div>
@@ -97,10 +95,10 @@ export default function Contact() {
                   <p className="font-semibold text-cyan-400">Phone</p>
 
                   <a
-                    href="tel:+917815838600"
+                    href="tel:+918019043638"
                     className="mt-1 block text-gray-300 transition-colors duration-300 hover:text-cyan-400"
                   >
-                    +91 78158 38600
+                    80190 43638
                   </a>
                 </div>
               </div>
